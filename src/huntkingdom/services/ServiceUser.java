@@ -9,6 +9,6 @@ package huntkingdom.services;
  *
  * @author amin
  */
-public class UsersService {
+public class ServiceUser {
     
 }

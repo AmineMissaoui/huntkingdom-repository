@@ -5,6 +5,9 @@
  */
 package huntkingdom;
 
+import huntkingdom.utils.MyDB;
+import java.sql.Connection;
+
 /**
  *
  * @author AmineMissaoui
@@ -15,7 +18,7 @@ public class HuntKingdom {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Connection conection = new MyDB().getInstance().getConnection();
     }
     
 }
