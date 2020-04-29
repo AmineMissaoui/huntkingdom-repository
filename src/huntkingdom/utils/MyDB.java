@@ -21,12 +21,25 @@ public class MyDB {
     String password ="huntkingdom";
     
     Connection cnx;
+    
+    static MyDB instance;
 
-    public MyDB() {
+    private MyDB() {
         try {
             this.cnx = DriverManager.getConnection(url, login, password);
+            System.out.println("connected");
         } catch (SQLException ex) {
             System.out.println("error" + ex.getMessage());
         }
+    }
+    
+    public static MyDB getInstance(){
+        if(instance == null)
+            instance = new MyDB();
+        return instance;
+    }
+    
+    public Connection getConnection (){
+        return cnx;
     }
 }
