@@ -34,15 +34,15 @@ public class ServiceUser implements IServiceUser{
     }
 
     public ArrayList<User> getUsers() throws SQLException {
-        ArrayList<User> results = new ArrayList<>();
-        String request = "SELECT * FROM users";
+        ArrayList<User> results = new ArrayList<User>();
+        String request = "SELECT * FROM `USERS`";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
         while (rst.next()) {
             User u = new User();
-            u.setId(rst.getInt("users_id"));
-            u.setFirst_name(rst.getString("users_first_name"));
-            u.setLast_name(rst.getString("users_last_name"));
+            u.setId(rst.getInt(1));
+            u.setFirst_name(rst.getString(2));
+            u.setLast_name(rst.getString(3));
             results.add(u);
         }
         return results;

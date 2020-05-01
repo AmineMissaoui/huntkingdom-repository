@@ -27,18 +27,14 @@ public class HuntKingdom {
         ServiceUser su = new ServiceUser();
         
         User u1 = new User("Amine", "Missaoui");
+        User u2 = new User("Akrem", "Amdouni");
+        
+
         
         try {
-            su.addUser(u1);
-            System.out.println("Added");
+            System.out.println(su.getUsers());
         } catch (SQLException ex) {
-            System.out.println("errer" + ex.getMessage());
-        }
-        
-        try {
-            su.getUsers();
-        } catch (SQLException ex) {
-            Logger.getLogger(HuntKingdom.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("error" + ex.getMessage());
         }
         
     }

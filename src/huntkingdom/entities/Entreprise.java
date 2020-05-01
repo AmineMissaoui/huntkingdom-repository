@@ -9,6 +9,6 @@ package huntkingdom.entities;
  *
  * @author amin
  */
-public class Entreprise {
+public class Entreprise extends User{
     
 }
