@@ -49,15 +49,16 @@ public class ServiceUser implements IServiceUser{
     }
 
     public void updateUser(User u) throws SQLException {
-        String request = "UPDATE `users` SET `users_first_name` = ?, `users_first_name` = ? WHERE users_id=?";
+        String request = "UPDATE `users` SET `users_first_name` = ?, `users_last_name` = ? WHERE users_id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
         pst.setString(1, u.getFirst_name());
         pst.setString(2, u.getLast_name());
         pst.setInt(3, u.getId());
+        pst.executeUpdate();
     }
     
     public void deleteUser(User u) throws SQLException{
-        String request = "DELETE FROM `USERS` WHERE users_id ="+ u.getId();
+        String request = "DELETE FROM `users` WHERE users_id ="+ u.getId();
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
