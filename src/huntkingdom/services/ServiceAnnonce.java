@@ -73,7 +73,7 @@ public class ServiceAnnonce {
         pst.setString(3, a.getCategorie());
         pst.setString(4, a.getGouvernorat());
         pst.setString(5, a.getVille());
-        pst.setString(6, a.getDescription());
+        pst.setString(6, a.getDescription());    
         pst.setInt(7, a.getNumtel());
         pst.setInt(8, a.getId());
        

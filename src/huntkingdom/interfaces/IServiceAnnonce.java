@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public interface IServiceAnnonce {
     
-    public void addAnnonce(annonce a) throws SQLException;
+    public void addAnnonce(annonce a) throws SQLException;  
     
     public ArrayList<annonce> getPersons() throws SQLException;
     
