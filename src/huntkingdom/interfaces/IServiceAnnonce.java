@@ -5,7 +5,7 @@
  */
 package huntkingdom.interfaces;
 
-import huntkingdom.entities.annonce;
+import huntkingdom.entities.Annonce;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -16,11 +16,11 @@ import java.util.ArrayList;
 public interface IServiceAnnonce {
     
     
-    public void addAnnonce(annonce a) throws SQLException;
+    public void addAnnonce(Annonce a) throws SQLException;
     
-    public ArrayList<annonce> getPersons() throws SQLException;
+    public ArrayList<Annonce> getPersons() throws SQLException;
     
-    public void updatePerson(annonce a) throws SQLException;
+    public void updatePerson(Annonce a) throws SQLException;
     
-    public void deletePerson(annonce a) throws SQLException;
+    public void deletePerson(Annonce a) throws SQLException;
 }

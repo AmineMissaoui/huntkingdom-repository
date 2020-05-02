@@ -5,7 +5,7 @@
  */
 package huntkingdom.services;
 
-import huntkingdom.entities.annonce;
+import huntkingdom.entities.Annonce;
 import huntkingdom.utils.MyDB;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
@@ -28,7 +28,7 @@ public class ServiceAnnonce {
         cnx=MyDB.getInstance().getConnection();
     
     }
-    public void addAnnonce(annonce a) throws SQLException {
+    public void addAnnonce(Annonce a) throws SQLException {
         String request = "INSERT INTO `annonce` (`prix`,`titre`,`categorie`,`gouvernorat`,`ville`,`description`,`numtel` )"
                 + "VALUES ( '" 
                 +a.getPrix() + "', '"
@@ -43,14 +43,14 @@ public class ServiceAnnonce {
         stm.executeUpdate(request);
     }
     
-    public ArrayList<annonce> getAnnonce() throws SQLException, FileNotFoundException{
-        ArrayList<annonce> results = new ArrayList<>();
+    public ArrayList<Annonce> getAnnonce() throws SQLException, FileNotFoundException{
+        ArrayList<Annonce> results = new ArrayList<>();
         String query = "SELECT * FROM `annonce`";
         Statement stm = cnx.createStatement();
         ResultSet rst= stm.executeQuery(query);
         while (rst.next()){
             
-            annonce a = new annonce();
+            Annonce a = new Annonce();
             
             a.setId(rst.getInt(1));
             a.setPrix(rst.getFloat(2));
@@ -66,7 +66,7 @@ public class ServiceAnnonce {
         return results; 
     }
     
-    public void updateAnnonce(annonce a) throws SQLException, FileNotFoundException{
+    public void updateAnnonce(Annonce a) throws SQLException, FileNotFoundException{
         String request= "UPDATE `annonce` SET `prix`=?,`titre`=?,`categorie`=?,`gouvernorat`=?,`ville`=?,`description`=?,`numtel`=?"+" where id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
         pst.setFloat(1, a.getPrix());
