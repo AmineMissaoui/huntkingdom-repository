@@ -88,6 +88,6 @@ public class ServiceAnnonce {
         String request ="DELETE FROM `annonce` WHERE id="+id;
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
-    }
+    }  
 
 }
