@@ -1,8 +1,9 @@
-/*
+
+        /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+         */
 package huntkingdom.entities;
 
 /**
@@ -10,13 +11,14 @@ package huntkingdom.entities;
  * @author FOCUS
  */
 public class Annonce {
+
     private int id;
     private float prix;
     private String titre;
     private String categorie;
     private String gouvernorat;
     private String ville;
-    private String description ;
+    private String description;
     private int numtel;
 
     public Annonce() {
@@ -97,25 +99,9 @@ public class Annonce {
         this.numtel = numtel;
     }
 
-   
-
     @Override
     public String toString() {
         return "annonce{" + "id=" + id + ", prix=" + prix + ", titre=" + titre + ", categorie=" + categorie + ", gouvernorat=" + gouvernorat + ", ville=" + ville + ", description=" + description + ", numtel=" + numtel + '}';
     }
 
-   
-
-   
-   
-
-    
-
-   
-    
-
-   
-
-    
-    
 }
