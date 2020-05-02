@@ -17,8 +17,8 @@ import java.util.logging.Logger;
  */
 public class MyDB {
     String url = "jdbc:mysql://127.0.0.1:3306/huntkingdom";
-    String login ="huntkingdom";
-    String password ="huntkingdom";
+    String login ="root";
+    String password ="";
     
     Connection cnx;
     
