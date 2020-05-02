@@ -10,5 +10,5 @@ package huntkingdom.entities;
  * @author amin
  */
 public class Admin extends User{
-    
+    String role = "";
 }
