@@ -20,7 +20,7 @@ public class Events {
     private float adresse_longitude;
     private float adresse_altitude;
     private String date;
-    private String heure;
+    
     private float point_derendezvous_longitude ;
     private float point_derendezvous_altitude ;
     private Timestamp jour_de_depart ;
@@ -33,7 +33,7 @@ public class Events {
         this.adresse_longitude = adresse_longitude;
         this.adresse_altitude = adresse_altitude;
         this.date = date;
-        this.heure = heure;
+        
         this.point_derendezvous_longitude = point_derendezvous_longitude;
         this.point_derendezvous_altitude = point_derendezvous_altitude;
         this.jour_de_depart = jour_de_depart;
@@ -46,11 +46,15 @@ public class Events {
         this.adresse_longitude = adresse_longitude;
         this.adresse_altitude = adresse_altitude;
         this.date = date;
-        this.heure = heure;
+        
         this.point_derendezvous_longitude = point_derendezvous_longitude;
         this.point_derendezvous_altitude = point_derendezvous_altitude;
         this.jour_de_depart = jour_de_depart;
         this.jour_de_retour = jour_de_retour;
+    }
+
+    public Events() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 
@@ -78,9 +82,8 @@ public class Events {
         return date;
     }
 
-    public String getHeure() {
-        return heure;
-    }
+    
+   
 
     public float getPoint_derendezvous_longitude() {
         return point_derendezvous_longitude;
@@ -122,9 +125,8 @@ public class Events {
         this.date = date;
     }
 
-    public void setHeure(String heure) {
-        this.heure = heure;
-    }
+    
+    
 
     public void setPoint_derendezvous_longitude(float point_derendezvous_longitude) {
         this.point_derendezvous_longitude = point_derendezvous_longitude;
@@ -146,7 +148,7 @@ public class Events {
 
     @Override
     public String toString() {
-        return "events{" + "nom=" + nom + ", adresse" + adresse + ",jour_de_depart=" +jour_de_depart+ ",jour_de_retour=" +jour_de_retour+ '}';
+        return "Events{" + "nom=" + nom + ", adresse" + adresse + ",jour_de_depart=" +jour_de_depart+ ",jour_de_retour=" +jour_de_retour+ '}';
     }
     
     }
