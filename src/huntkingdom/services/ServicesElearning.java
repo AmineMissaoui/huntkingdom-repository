@@ -29,45 +29,37 @@ public class ServicesElearning implements IServicesElearning{
     }
 
     @Override
-    public boolean addLesson(Elearning e) {
-        try{
+    public void addLesson(Elearning e)  throws SQLException {
+        
         copyFile(e);
-        String request = "INSERT INTO `ELEARNING` (id , name, description , path) VALUES (NULL, '" + e.getName()+ "' , '" + e.getDescription() + "' , '"+PATH_REPO+UUID.randomUUID().toString()+".pdf')";
+        String request = "INSERT INTO `ELEARNING` (id , name, description , path) VALUES (NULL, '" + e.getName()+ "' , '" + e.getDescription() + "' , '"+PATH_REPO+".pdf')";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
-        return true ;
-           }catch( SQLException ex){
-               ex.printStackTrace();
-               return false ;
-           }
+      
     }
 
     @Override
-    public ArrayList<Elearning> getlessons() {
+    public ArrayList<Elearning> getlessons()  throws SQLException  {
         ArrayList<Elearning> results = new ArrayList<Elearning>();
-        try {
-            
-       
+     
         String request = "SELECT * FROM `ELEARNING`";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
-        
         while (rst.next()) {
             Elearning u = new Elearning(rst.getInt("id"),rst.getString("name"),
                     rst.getString("description"),rst.getString("path"));
          
             results.add(u);
         }
-         } catch (Exception e) {
-            e.printStackTrace();
-        }
         
         return results;  
     }
+    
+   
 
     @Override
-    public boolean updateLesson(Elearning e)  {
-        try {
+    public void updateLesson(Elearning e) throws SQLException {
+       
         String request = "UPDATE `ELEARNING` SET `name` = ?, `description` = ? , `path` = ? WHERE id=?";
         
         PreparedStatement pst = cnx.prepareStatement(request);
@@ -79,25 +71,17 @@ public class ServicesElearning implements IServicesElearning{
         
         pst.executeUpdate();
        
-        return true; 
-        }catch (SQLException ex){
-            ex.printStackTrace();
-        return false ;
-        }
+     
     }
 
     @Override
-    public boolean deleteLesson(Elearning u) {
-        try {
+    public void deleteLesson(Elearning u) throws SQLException {
+       
         String request = "DELETE FROM `ELEARNING` WHERE id ="+ u.getId();
         
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
-        return true ;
-        } catch (Exception e) {
-         return false ; 
-        }
-   
+     
     }
     
     public void copyFile(Elearning e){
@@ -106,7 +90,7 @@ public class ServicesElearning implements IServicesElearning{
 
         try{
             File infile =new File(e.getPath());
-            File outfile =new File(PATH_REPO +UUID.randomUUID().toString()+".pdf");
+            File outfile =new File(PATH_REPO +".pdf");
 
             instream = new FileInputStream(infile);
             outstream = new FileOutputStream(outfile);
