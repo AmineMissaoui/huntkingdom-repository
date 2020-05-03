@@ -9,7 +9,7 @@ package huntkingdom.entities;
  *
  * @author FOCUS
  */
-public class annonce {
+public class Annonce {
     private int id;
     private float prix;
     private String titre;
@@ -19,10 +19,10 @@ public class annonce {
     private String description ;
     private int numtel;
 
-    public annonce() {
+    public Annonce() {
     }
 
-    public annonce(int id, float prix, String titre, String categorie, String gouvernorat, String ville, String description, int numtel) {
+    public Annonce(int id, float prix, String titre, String categorie, String gouvernorat, String ville, String description, int numtel) {
         this.id = id;
         this.prix = prix;
         this.titre = titre;
