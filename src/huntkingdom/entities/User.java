@@ -17,24 +17,32 @@ import java.util.ArrayList;
  * @author amin
  */
 public class User {
+
     private int id;
     private String first_name;
     private String last_name;
-    
+    private String adresse;
+
     static Connection cnx;
 
     public User() {
     }
 
-    public User(String first_name, String last_name) {
+    public User(String first_name, String last_name, String adresse) {
         this.first_name = first_name;
         this.last_name = last_name;
+        this.adresse = adresse;
     }
-    
-    public User(int id, String first_name, String last_name) {
+
+    public User(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public User(int id, String first_name, String last_name, String adresse) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.adresse = adresse;
     }
 
     public int getId() {
@@ -59,6 +67,14 @@ public class User {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     @Override

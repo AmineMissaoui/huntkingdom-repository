@@ -28,7 +28,7 @@ public class ServiceUser implements IServiceUser{
     }
 
     public void addUser(User u) throws SQLException {
-        String request = "INSERT INTO `USERS` (users_id, users_first_name, users_last_name) VALUES (NULL, '" + u.getFirst_name() + "' , '" + u.getLast_name() + "' )";
+        String request = "INSERT INTO `USERS` (users_id, users_first_name, users_last_name,user_adresse) VALUES (NULL, '" + u.getFirst_name() + "' , '" + u.getLast_name() + "' , '"+u.getAdresse()+"')";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
@@ -49,11 +49,12 @@ public class ServiceUser implements IServiceUser{
     }
 
     public void updateUser(User u) throws SQLException {
-        String request = "UPDATE `users` SET `users_first_name` = ?, `users_first_name` = ? WHERE users_id=?";
+        String request = "UPDATE `users` SET `users_first_name` = ?, `users_first_name` = ?, `users_adresse`=? WHERE users_id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
         pst.setString(1, u.getFirst_name());
         pst.setString(2, u.getLast_name());
-        pst.setInt(3, u.getId());
+        pst.setString(3, u.getAdresse());
+        pst.setInt(4, u.getId());
     }
     
     public void deleteUser(User u) throws SQLException{

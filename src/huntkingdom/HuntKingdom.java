@@ -26,8 +26,7 @@ public class HuntKingdom {
         //Connection conection = new MyDB().getInstance().getConnection();
         ServiceUser su = new ServiceUser();
         
-        User u1 = new User("Amine", "Missaoui");
-        User u2 = new User("Akrem", "Amdouni");
+       
         
 
         
