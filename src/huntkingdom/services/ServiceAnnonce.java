@@ -6,6 +6,7 @@
 package huntkingdom.services;
 
 import huntkingdom.entities.Annonce;
+import huntkingdom.interfaces.IServiceAnnonce;
 import huntkingdom.utils.MyDB;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
@@ -19,26 +20,22 @@ import java.util.ArrayList;
  *
  * @author FOCUS
  */
-public class ServiceAnnonce {
+public class ServiceAnnonce{
     
     
-     private Connection cnx;
+        private Connection cnx;
 
     public ServiceAnnonce() {
         cnx=MyDB.getInstance().getConnection();
     
     }
     public void addAnnonce(Annonce a) throws SQLException {
-        String request = "INSERT INTO `annonce` (`prix`,`titre`,`categorie`,`gouvernorat`,`ville`,`description`,`numtel` )"
+        String request = "INSERT INTO `annonce` (`prix`,`titre`,`categorie`,`description` )"
                 + "VALUES ( '" 
                 +a.getPrix() + "', '"
                 +a.getTitre()+"', '"
                 +a.getCategorie()+"', '"
-                +a.getGouvernorat()+"', '"
-                +a.getVille()+"', '"
-                +a.getDescription()+"', '"
-                +a.getNumtel()+ 
-                "')";
+                +a.getDescription()+ "')";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
@@ -56,10 +53,7 @@ public class ServiceAnnonce {
             a.setPrix(rst.getFloat(2));
             a.setTitre(rst.getString(3));
             a.setCategorie(rst.getString(4));
-            a.setGouvernorat(rst.getString(5));
-            a.setVille(rst.getString(6));
-            a.setDescription(rst.getString(7));
-            a.setNumtel(rst.getInt(8));
+            a.setDescription(rst.getString(5));
             results.add(a);
         }
         
@@ -67,16 +61,13 @@ public class ServiceAnnonce {
     }
     
     public void updateAnnonce(Annonce a) throws SQLException, FileNotFoundException{
-        String request= "UPDATE `annonce` SET `prix`=?,`titre`=?,`categorie`=?,`gouvernorat`=?,`ville`=?,`description`=?,`numtel`=?"+" where id=?";
+        String request= "UPDATE `annonce` SET `prix`=?,`titre`=?,`categorie`=?,`description`=? "+" where id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
         pst.setFloat(1, a.getPrix());
         pst.setString(2, a.getTitre());
         pst.setString(3, a.getCategorie());
-        pst.setString(4, a.getGouvernorat());
-        pst.setString(5, a.getVille());
-        pst.setString(6, a.getDescription());
-        pst.setInt(7, a.getNumtel());
-        pst.setInt(8, a.getId());
+        pst.setString(4, a.getDescription());
+        pst.setInt(5, a.getId());
        
 
         System.out.println(pst);
@@ -88,6 +79,6 @@ public class ServiceAnnonce {
         String request ="DELETE FROM `annonce` WHERE id="+id;
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
-    }  
+    }
 
 }

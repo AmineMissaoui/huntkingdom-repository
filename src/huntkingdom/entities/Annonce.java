@@ -14,23 +14,24 @@ public class Annonce {
     private float prix;
     private String titre;
     private String categorie;
-    private String gouvernorat;
-    private String ville;
     private String description ;
-    private int numtel;
 
     public Annonce() {
     }
 
-    public Annonce(int id, float prix, String titre, String categorie, String gouvernorat, String ville, String description, int numtel) {
+    public Annonce(int id, float prix, String titre, String categorie, String description) {
         this.id = id;
         this.prix = prix;
         this.titre = titre;
         this.categorie = categorie;
-        this.gouvernorat = gouvernorat;
-        this.ville = ville;
         this.description = description;
-        this.numtel = numtel;
+    }
+
+    public Annonce(float prix, String titre, String categorie, String description) {
+        this.prix = prix;
+        this.titre = titre;
+        this.categorie = categorie;
+        this.description = description;
     }
 
     public int getId() {
@@ -65,22 +66,6 @@ public class Annonce {
         this.categorie = categorie;
     }
 
-    public String getGouvernorat() {
-        return gouvernorat;
-    }
-
-    public void setGouvernorat(String gouvernorat) {
-        this.gouvernorat = gouvernorat;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -89,21 +74,11 @@ public class Annonce {
         this.description = description;
     }
 
-    public int getNumtel() {
-        return numtel;
-    }
-
-    public void setNumtel(int numtel) {
-        this.numtel = numtel;
-    }
-
-   
-
     @Override
     public String toString() {
-        return "annonce{" + "id=" + id + ", prix=" + prix + ", titre=" + titre + ", categorie=" + categorie + ", gouvernorat=" + gouvernorat + ", ville=" + ville + ", description=" + description + ", numtel=" + numtel + '}';
+        return "Annonce{" + "id=" + id + ", prix=" + prix + ", titre=" + titre + ", categorie=" + categorie + ", description=" + description + '}';
     }
-
+    
    
 
    
