@@ -6,6 +6,7 @@
 package huntkingdom.services;
 
 import huntkingdom.entities.Events;
+import huntkingdom.utils.MyDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +20,13 @@ import java.util.ArrayList;
  */
 public class eventservices {
      private Connection cnx;
+     
+     public eventservices() {
+        cnx=MyDB.getInstance().getConnection();
+    }
     
      public void addevents(Events v) throws SQLException {
-        String request = "INSERT INTO `Events` (`id`,`nom`,`adresse ,'akdksd' ,'dlldd'`)"
+        String request = "INSERT INTO `events` (`id`,`nom`,`adresse `)"
                 + "VALUES (NULL, '" + v.getNom()+  "', '"
                 +v.getAdresse()+ "')";
         Statement stm = cnx.createStatement();
@@ -34,7 +39,7 @@ public class eventservices {
      public ArrayList<Events> GetEvents() throws SQLException{
         ArrayList<Events> results = new ArrayList<>();
         
-        String query = "SELECT * FROM `Events`";
+        String query = "SELECT * FROM `events`";
         Statement stm = cnx.createStatement();
         ResultSet rst= stm.executeQuery(query);
         while (rst.next()){
@@ -43,13 +48,13 @@ public class eventservices {
             v.setNom(rst.getString(2));
             v.setAdresse(rst.getString(3));
             results.add(v);
-        
-        
-        return results;
-        
+              
      }
-       public void updateEvents(Events v) throws SQLException{                 
-          String request= "UPDATE `Personne` SET `first_name`=?, `last_name`=?"
+         
+      return results;  
+   } 
+     public void updateEvents(Events v) throws SQLException{                 
+          String request= "UPDATE `Personne` SET `Nom`=?, `adresse`=?"
                 + "WHERE id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
         
@@ -60,8 +65,8 @@ public class eventservices {
         
         pst.executeUpdate();
     }
-       public void deleteEvents(Events v) throws SQLException {
-        String request ="DELETE FROM `Personne` WHERE id="+v.getId();
+     public void deleteEvents(Events v) throws SQLException {
+        String request ="DELETE FROM `Events` WHERE id="+v.getId();
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
