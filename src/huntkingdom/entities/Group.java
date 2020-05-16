@@ -22,6 +22,7 @@ public class Group {
         public Group ( String nom,String description){
     this.description=description;
     this.nom=nom;
+    
     }
 
     /**
