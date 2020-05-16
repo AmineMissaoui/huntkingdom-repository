@@ -22,13 +22,13 @@ public class Group {
         public Group ( String nom,String description){
     this.description=description;
     this.nom=nom;
-    
     }
 
     /**
      * @return the id
      */
     public int getId() {
+        
         return id;
     }
 
