@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+    <stylesheets>
+        <URL value="@homefxml.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="52.0" prefWidth="1027.0">
+         <children>
+            <Line endX="-100.0" endY="28.0" startX="-100.0" startY="-23.0" />
+            <Line endX="-100.0" endY="20.5" layoutX="300.0" layoutY="30.0" startX="-100.0" startY="-31.0" />
+            <Line endX="1027.0" layoutX="8.0" layoutY="52.0" startX="-7.5" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="977.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/img/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="943.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/img/message.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="908.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/img/bell.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="53.0" prefHeight="716.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="716.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+            <JFXButton layoutY="90.0" prefHeight="32.0" prefWidth="200.0" ripplerFill="#ae5656" text="HOME" />
+            <JFXButton layoutX="-1.0" layoutY="123.0" prefHeight="32.0" prefWidth="200.0" text="CALENDAR" />
+            <JFXButton layoutX="-1.0" layoutY="156.0" prefHeight="32.0" prefWidth="200.0" text="EVENT" />
+            <JFXButton layoutX="-1.0" layoutY="189.0" prefHeight="32.0" prefWidth="200.0" text="ELEARNING" />
+            <JFXButton layoutX="-1.0" layoutY="223.0" prefHeight="32.0" prefWidth="200.0" text="SHOP" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="53.0" prefHeight="716.0" prefWidth="837.0" />
+   </children>
+</AnchorPane>
