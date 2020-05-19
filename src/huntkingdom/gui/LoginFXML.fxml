@@ -13,7 +13,7 @@
         <URL value="@loginfxml.css" />
     </stylesheets>
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="768.0" stroke="BLACK" strokeType="INSIDE" width="344.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="768.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="344.0" />
       <Label layoutX="514.0" layoutY="225.0" text="LOGIN">
          <font>
             <Font name="System Bold" size="24.0" />
