@@ -25,7 +25,7 @@ public class User {
     private String first_name;
     private String last_name;
     private String email;
-    private Date birthdate;
+    private String birthdate;
     private String adress;
     private String state;
     private String city;
@@ -37,7 +37,7 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String first_name, String last_name, String email, Date birthdate, String adress, String state, String city, String role, boolean active) {
+    public User(String username, String password, String first_name, String last_name, String email, String birthdate, String adress, String state, String city, String role, boolean active) {
         this.username = username;
         this.password = password;
         this.first_name = first_name;
@@ -51,7 +51,7 @@ public class User {
         this.active = active;
     }
 
-    public User(int id, String username, String password, String first_name, String last_name, String email, Date birthdate, String adress, String state, String city, String role, boolean active) {
+    public User(int id, String username, String password, String first_name, String last_name, String email, String birthdate, String adress, String state, String city, String role, boolean active) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -82,7 +82,7 @@ public class User {
         return email;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
@@ -130,7 +130,7 @@ public class User {
         this.email = email;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 

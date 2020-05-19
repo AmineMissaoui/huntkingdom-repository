@@ -39,7 +39,7 @@ public class RegisterFXMLController implements Initializable {
     @FXML
     private JFXTextField tfCity;
     @FXML
-    private JFXComboBox<?> tfState;
+    private JFXComboBox<String> cbState;
     @FXML
     private JFXButton btnRegister;
 
@@ -48,9 +48,19 @@ public class RegisterFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        cbState.getItems().add("Tunis");
         btnRegister.setOnAction((event) -> {
             User u = new User();
-            u.setFirst_name("");
+            u.setUsername(tfUsername.getText());
+            u.setPassword(tfPassword.getText());
+            u.setFirst_name(tfFirstName.getText());
+            u.setLast_name(tfLastname.getText());
+            u.setEmail(tfEmail.getText());
+            u.setBirthdate(dpBirthdate.getValue().toString());
+            u.setAdress(tfAdress.getText());
+            //u.setState(cbState.);
+            u.setCity(tfCity.getText());
+            
         });
     }    
     
