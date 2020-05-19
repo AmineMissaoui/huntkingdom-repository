@@ -50,7 +50,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="514.0" layoutY="522.0" text="Are you?">
+      <Label layoutX="514.0" layoutY="512.0" text="Are you?">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -59,28 +59,28 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXDatePicker layoutX="514.0" layoutY="364.0" prefHeight="28.0" prefWidth="296.0" />
-      <JFXTextField layoutX="514.0" layoutY="119.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField layoutX="514.0" layoutY="169.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField layoutX="514.0" layoutY="218.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField layoutX="514.0" layoutY="267.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField layoutX="514.0" layoutY="317.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField layoutX="514.0" layoutY="416.0" prefHeight="25.0" prefWidth="296.0" />
+      <JFXDatePicker fx:id="dpBirthdate" layoutX="514.0" layoutY="364.0" prefHeight="28.0" prefWidth="296.0" />
+      <JFXTextField fx:id="tfUsername" layoutX="514.0" layoutY="119.0" prefHeight="25.0" prefWidth="296.0" />
+      <JFXTextField fx:id="tfPassword" layoutX="514.0" layoutY="169.0" prefHeight="25.0" prefWidth="296.0" />
+      <JFXTextField fx:id="tfFirstName" layoutX="514.0" layoutY="218.0" prefHeight="25.0" prefWidth="296.0" />
+      <JFXTextField fx:id="tfLastname" layoutX="514.0" layoutY="267.0" prefHeight="25.0" prefWidth="296.0" />
+      <JFXTextField fx:id="tfEmail" layoutX="514.0" layoutY="317.0" prefHeight="25.0" prefWidth="296.0" />
+      <JFXTextField fx:id="tfAdress" layoutX="514.0" layoutY="416.0" prefHeight="25.0" prefWidth="296.0" />
       <Label layoutX="514.0" layoutY="450.0" text="State">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="680.0" layoutY="450.0" text="State">
+      <Label layoutX="680.0" layoutY="450.0" text="City">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="679.0" layoutY="464.0" prefHeight="25.0" prefWidth="131.0" />
-      <JFXComboBox layoutX="514.0" layoutY="464.0" prefHeight="25.0" prefWidth="147.0" />
-      <JFXRadioButton layoutX="514.0" layoutY="548.0" text="A hobbyist" />
-      <JFXRadioButton layoutX="514.0" layoutY="576.0" text="An entreprise" />
-      <JFXButton layoutX="514.0" layoutY="607.0" prefHeight="25.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
+      <JFXTextField fx:id="tfCity" layoutX="679.0" layoutY="464.0" prefHeight="25.0" prefWidth="131.0" />
+      <JFXComboBox fx:id="tfState" layoutX="514.0" layoutY="464.0" prefHeight="25.0" prefWidth="147.0" />
+      <JFXRadioButton layoutX="514.0" layoutY="538.0" text="A hobbyist" />
+      <JFXRadioButton layoutX="514.0" layoutY="566.0" text="An entreprise" />
+      <JFXButton fx:id="btnRegister" layoutX="514.0" layoutY="597.0" prefHeight="25.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
