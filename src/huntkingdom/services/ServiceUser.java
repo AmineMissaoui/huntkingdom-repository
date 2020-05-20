@@ -28,7 +28,18 @@ public class ServiceUser implements IServiceUser{
     }
 
     public void addUser(User u) throws SQLException {
-        String request = "INSERT INTO `USERS` (users_id, users_first_name, users_last_name) VALUES (NULL, '" + u.getFirst_name() + "' , '" + u.getLast_name() + "' )";
+        String request = "INSERT INTO `USERS` (users_id, users_first_name, users_last_name,users_username,users_password,users_email,users_birthdate,users_adress,users_state,users_city,users_role,users_active) VALUES (NULL, "
+                + "'" + u.getFirst_name() + "' , "
+                + "'" + u.getLast_name() + "',"
+                + "'" + u.getUsername() + "',"
+                + "'" + u.getPassword() + "',"
+                + "'" + u.getEmail() + "',"
+                + "'" + u.getBirthdate() + "',"
+                + "'" + u.getAdress() + "',"
+                + "'" + u.getState() + "',"
+                + "'" + u.getCity() + "',"
+                + "'" + u.getRole() + "',"
+                + "Null )";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }

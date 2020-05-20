@@ -83,8 +83,7 @@
                </font>
             </Label>
             <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="487.0" prefHeight="25.0" prefWidth="131.0" />
-            <JFXComboBox fx:id="tfState" layoutX="195.0" layoutY="487.0" prefHeight="25.0" prefWidth="147.0" />
-            <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="561.0" selected="true" text="A hobbyist">
+            <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="561.0" onAction="#selectRadio" selected="true" text="A hobbyist">
                <toggleGroup>
                   <ToggleGroup fx:id="user_role" />
                </toggleGroup>
@@ -98,6 +97,7 @@
             <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="193.0" prefHeight="25.0" prefWidth="296.0" />
             <FontAwesomeIcon glyphName="CLOSE" layoutX="658.0" layoutY="27.0" onMouseClicked="#closeApp" size="1.5em" />
             <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="16.0" layoutY="26.0" onMouseClicked="#backToPrevious" size="1.5em" />
+            <JFXComboBox fx:id="cbState" layoutX="196.0" layoutY="487.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
          </children>
       </Pane>
    </children>

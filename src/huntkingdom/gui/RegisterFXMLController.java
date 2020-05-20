@@ -20,12 +20,16 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import sun.misc.Launcher;
@@ -53,11 +57,8 @@ public class RegisterFXMLController implements Initializable {
     private JFXTextField tfAdress;
     @FXML
     private JFXTextField tfCity;
-    private JFXComboBox<String> cbState;
     @FXML
     private JFXButton btnRegister;
-    @FXML
-    private JFXComboBox<?> tfState;
     @FXML
     private Pane contentAreaTwo;
     @FXML
@@ -66,13 +67,16 @@ public class RegisterFXMLController implements Initializable {
     private JFXRadioButton rbMemeber;
     @FXML
     private JFXRadioButton rbEntreprise;
+    @FXML
+    private JFXComboBox<String> cbState;
+    ObservableList<String> list = FXCollections.observableArrayList("Tunis", "Ben Arouss");
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        cbState.setItems(list);
         btnRegister.setOnAction((event) -> {
             User u = new User();
             u.setUsername(tfUsername.getText());
@@ -82,8 +86,15 @@ public class RegisterFXMLController implements Initializable {
             u.setEmail(tfEmail.getText());
             u.setBirthdate(dpBirthdate.getValue().toString());
             u.setAdress(tfAdress.getText());
-            //u.setState(cbState.);
+            u.setState(cbState.getValue());
             u.setCity(tfCity.getText());
+            
+            if(rbMemeber.isSelected()){
+            u.setRole(rbMemeber.getText());
+            }else if(rbEntreprise.isSelected()){
+            u.setRole(rbEntreprise.getText());
+            }
+            
             ServiceUser su = new ServiceUser();
             try {
                 su.addUser(u);
@@ -103,6 +114,16 @@ public class RegisterFXMLController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("LoginFXML.fxml"));
         contentAreaTwo.getChildren().removeAll();
         contentAreaTwo.getChildren().setAll(root);
+    }
+
+    @FXML
+    private void selectRadio(ActionEvent event) {
+        //String message="";
+        //if(rbMemeber.isSelected()){
+        //    message = rbMemeber.getText();
+        //}else if(rbEntreprise.isSelected()){
+        //    message = rbEntreprise.getText();
+        //}
     }
 
 }
