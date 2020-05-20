@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import huntkingdom.entities.User;
 import huntkingdom.services.ServiceUser;
@@ -25,6 +26,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import sun.misc.Launcher;
 
@@ -58,6 +60,12 @@ public class RegisterFXMLController implements Initializable {
     private JFXComboBox<?> tfState;
     @FXML
     private Pane contentAreaTwo;
+    @FXML
+    private ToggleGroup user_role;
+    @FXML
+    private JFXRadioButton rbMemeber;
+    @FXML
+    private JFXRadioButton rbEntreprise;
 
     /**
      * Initializes the controller class.
