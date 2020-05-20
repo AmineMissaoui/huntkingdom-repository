@@ -26,78 +26,78 @@
                   <Font name="Open Sans Bold" size="26.0" />
                </font>
             </Label>
-            <Label layoutX="199.0" layoutY="326.0" text="Email">
+            <Label layoutX="195.0" layoutY="403.0" text="Email">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="425.0" text="Adress">
+            <Label layoutX="195.0" layoutY="502.0" text="Adress">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="128.0" text="Username">
+            <Label layoutX="195.0" layoutY="205.0" text="Username">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="227.0" text="First name">
+            <Label layoutX="195.0" layoutY="304.0" text="First name">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="275.0" text="Last name">
+            <Label layoutX="195.0" layoutY="352.0" text="Last name">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="178.0" text="Password">
+            <Label layoutX="195.0" layoutY="255.0" text="Password">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="535.0" text="Are you?">
+            <Label layoutX="196.0" layoutY="139.0" text="Are you?">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="374.0" text="Birthdate">
+            <Label layoutX="195.0" layoutY="451.0" text="Birthdate">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="dpBirthdate" layoutX="195.0" layoutY="387.0" prefHeight="28.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="142.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfFirstName" layoutX="195.0" layoutY="241.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfLastname" layoutX="195.0" layoutY="290.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfEmail" layoutX="195.0" layoutY="340.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfAdress" layoutX="195.0" layoutY="439.0" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="195.0" layoutY="473.0" text="State">
+            <JFXDatePicker fx:id="dpBirthdate" layoutX="195.0" layoutY="464.0" prefHeight="28.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="219.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfFirstName" layoutX="195.0" layoutY="318.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfLastname" layoutX="195.0" layoutY="367.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfEmail" layoutX="195.0" layoutY="417.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfAdress" layoutX="195.0" layoutY="516.0" prefHeight="25.0" prefWidth="296.0" />
+            <Label layoutX="195.0" layoutY="550.0" text="State">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="361.0" layoutY="473.0" text="City">
+            <Label layoutX="361.0" layoutY="550.0" text="City">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="487.0" prefHeight="25.0" prefWidth="131.0" />
-            <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="561.0" onAction="#selectRadio" selected="true" text="A hobbyist">
+            <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="564.0" prefHeight="25.0" prefWidth="131.0" />
+            <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="166.0" onAction="#selectRadio" selected="true" text="A hobbyist">
                <toggleGroup>
                   <ToggleGroup fx:id="user_role" />
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="rbEntreprise" layoutX="195.0" layoutY="589.0" text="An entreprise" toggleGroup="$user_role" />
+            <JFXRadioButton fx:id="rbEntreprise" layoutX="312.0" layoutY="166.0" text="An entreprise" toggleGroup="$user_role" />
             <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="620.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="193.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="270.0" prefHeight="25.0" prefWidth="296.0" />
             <FontAwesomeIcon glyphName="CLOSE" layoutX="658.0" layoutY="27.0" onMouseClicked="#closeApp" size="1.5em" />
-            <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="16.0" layoutY="26.0" onMouseClicked="#backToPrevious" size="1.5em" />
-            <JFXComboBox fx:id="cbState" layoutX="196.0" layoutY="487.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
+            <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="16.0" layoutY="27.0" onMouseClicked="#backToPrevious" size="1.5em" />
+            <JFXComboBox fx:id="cbState" layoutX="196.0" layoutY="564.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
          </children>
       </Pane>
    </children>

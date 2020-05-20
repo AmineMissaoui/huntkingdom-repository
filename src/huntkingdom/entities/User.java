@@ -65,6 +65,15 @@ public class User {
         this.role = role;
         this.active = active;
     }
+    
+    public User(String email,String adress, String state, String city, String role, boolean active){
+        this.email = email;
+        this.adress = adress;
+        this.state = state;
+        this.city = city;
+        this.role = role;
+        this.active = active;
+    }
 
     public int getId() {
         return id;
