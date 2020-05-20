@@ -3,87 +3,97 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.RegisterFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="680.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.RegisterFXMLController">
     <stylesheets>
         <URL value="@registerfxml.css" />
     </stylesheets>
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="768.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="344.0" />
-      <Label layoutX="514.0" layoutY="57.0" text="REGISTER">
-         <font>
-            <Font name="Open Sans Bold" size="26.0" />
-         </font>
-      </Label>
-      <Label layoutX="518.0" layoutY="303.0" text="Email">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Label layoutX="514.0" layoutY="402.0" text="Adress">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Label layoutX="514.0" layoutY="105.0" text="Username">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="514.0" layoutY="204.0" text="First name">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="514.0" layoutY="252.0" text="Last name">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="514.0" layoutY="155.0" text="Password">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="514.0" layoutY="512.0" text="Are you?">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Label layoutX="514.0" layoutY="351.0" text="Birthdate">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <JFXDatePicker fx:id="dpBirthdate" layoutX="514.0" layoutY="364.0" prefHeight="28.0" prefWidth="296.0" />
-      <JFXTextField fx:id="tfUsername" layoutX="514.0" layoutY="119.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField fx:id="tfPassword" layoutX="514.0" layoutY="169.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField fx:id="tfFirstName" layoutX="514.0" layoutY="218.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField fx:id="tfLastname" layoutX="514.0" layoutY="267.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField fx:id="tfEmail" layoutX="514.0" layoutY="317.0" prefHeight="25.0" prefWidth="296.0" />
-      <JFXTextField fx:id="tfAdress" layoutX="514.0" layoutY="416.0" prefHeight="25.0" prefWidth="296.0" />
-      <Label layoutX="514.0" layoutY="450.0" text="State">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="680.0" layoutY="450.0" text="City">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="tfCity" layoutX="679.0" layoutY="464.0" prefHeight="25.0" prefWidth="131.0" />
-      <JFXComboBox fx:id="tfState" layoutX="514.0" layoutY="464.0" prefHeight="25.0" prefWidth="147.0" />
-      <JFXRadioButton layoutX="514.0" layoutY="538.0" text="A hobbyist" />
-      <JFXRadioButton layoutX="514.0" layoutY="566.0" text="An entreprise" />
-      <JFXButton fx:id="btnRegister" layoutX="514.0" layoutY="597.0" prefHeight="25.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </JFXButton>
+      <Pane fx:id="contentAreaTwo" layoutX="-2.0" prefHeight="768.0" prefWidth="686.0">
+         <children>
+            <Label layoutX="195.0" layoutY="80.0" text="REGISTER">
+               <font>
+                  <Font name="Open Sans Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="199.0" layoutY="326.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="425.0" text="Adress">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="128.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="227.0" text="First name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="275.0" text="Last name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="178.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="535.0" text="Are you?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="374.0" text="Birthdate">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="dpBirthdate" layoutX="195.0" layoutY="387.0" prefHeight="28.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="142.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfFirstName" layoutX="195.0" layoutY="241.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfLastname" layoutX="195.0" layoutY="290.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfEmail" layoutX="195.0" layoutY="340.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfAdress" layoutX="195.0" layoutY="439.0" prefHeight="25.0" prefWidth="296.0" />
+            <Label layoutX="195.0" layoutY="473.0" text="State">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="361.0" layoutY="473.0" text="City">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="487.0" prefHeight="25.0" prefWidth="131.0" />
+            <JFXComboBox fx:id="tfState" layoutX="195.0" layoutY="487.0" prefHeight="25.0" prefWidth="147.0" />
+            <JFXRadioButton layoutX="195.0" layoutY="561.0" text="A hobbyist" />
+            <JFXRadioButton layoutX="195.0" layoutY="589.0" text="An entreprise" />
+            <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="620.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="193.0" prefHeight="25.0" prefWidth="296.0" />
+            <FontAwesomeIcon glyphName="CLOSE" layoutX="658.0" layoutY="27.0" onMouseClicked="#closeApp" size="1.5em" />
+            <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="16.0" layoutY="26.0" onMouseClicked="#backToPrevious" size="1.5em" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
