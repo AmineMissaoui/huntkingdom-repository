@@ -32,6 +32,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import sun.misc.Launcher;
 
 /**
@@ -59,7 +60,6 @@ public class RegisterFXMLController implements Initializable {
     private JFXTextField tfCity;
     @FXML
     private JFXButton btnRegister;
-    private Pane contentAreaTwo;
     @FXML
     private ToggleGroup user_role;
     @FXML
@@ -99,6 +99,16 @@ public class RegisterFXMLController implements Initializable {
             ServiceUser su = new ServiceUser();
             try {
                 su.addUser(u);
+                tfUsername.setText("");
+                tfPassword.setText("");
+                tfFirstName.setText("");
+                tfLastname.setText("");
+                tfEmail.setText("");
+                dpBirthdate.setValue(null);
+                tfAdress.setText("");
+                cbState.setValue("");
+                tfCity.setText("");
+                
             } catch (SQLException ex) {
                 System.out.println("Error" + ex.getMessage());
             }
@@ -113,8 +123,8 @@ public class RegisterFXMLController implements Initializable {
     @FXML
     private void backToPrevious(javafx.scene.input.MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("LoginFXML.fxml"));
-        contentAreaTwo.getChildren().removeAll();
-        contentAreaTwo.getChildren().setAll(root);
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(root);
     }
 
     @FXML

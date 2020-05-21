@@ -85,6 +85,15 @@ public class RegisterEntrepriseFXMLController implements Initializable {
             ServiceUser se = new ServiceUser();
             try {
                 se.addEntreprise(e);
+                tfUsername.setText("");
+                tfPassword.setText("");
+                tfEmail.setText("");
+                tfEntrepriseName.setText("");
+                tfTaxNumber.setText("");
+                tfAdress.setText("");
+                cbState.setValue("");
+                tfCity.setText("");
+                
             } catch (SQLException ex) {
                 System.out.println("error" + ex.getMessage());
             }
@@ -94,10 +103,14 @@ public class RegisterEntrepriseFXMLController implements Initializable {
 
     @FXML
     private void closeApp(MouseEvent event) {
+        System.exit(0);
     }
 
     @FXML
-    private void backToPrevious(MouseEvent event) {
+    private void backToPrevious(MouseEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("LoginFXML.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
     }
 
     @FXML

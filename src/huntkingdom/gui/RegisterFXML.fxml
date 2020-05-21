@@ -19,7 +19,7 @@
         <URL value="@registerfxml.css" />
     </stylesheets>
    <children>
-      <Pane fx:id="contentArea" layoutX="-2.0" prefHeight="768.0" prefWidth="686.0">
+      <Pane fx:id="contentArea" layoutX="-2.0" prefHeight="768.0" prefWidth="680.0">
          <children>
             <Label layoutX="195.0" layoutY="80.0" text="REGISTER">
                <font>
@@ -95,8 +95,8 @@
                </font>
             </JFXButton>
             <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="270.0" prefHeight="25.0" prefWidth="296.0" />
-            <FontAwesomeIcon glyphName="CLOSE" layoutX="658.0" layoutY="27.0" onMouseClicked="#closeApp" size="1.5em" />
-            <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="16.0" layoutY="27.0" onMouseClicked="#backToPrevious" size="1.5em" />
+            <FontAwesomeIcon glyphName="CLOSE" layoutX="650.0" layoutY="30.0" onMouseClicked="#closeApp" size="1.5em" />
+            <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="30.0" layoutY="30.0" onMouseClicked="#backToPrevious" size="1.5em" />
             <JFXComboBox fx:id="cbState" layoutX="196.0" layoutY="564.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
          </children>
       </Pane>

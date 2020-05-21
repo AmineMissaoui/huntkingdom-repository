@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.WecomeFXMLController">
+    <stylesheets>
+        <URL value="@wecomefxml.css" />
+    </stylesheets>
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="768.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="344.0" />
+      <Pane fx:id="welcomePane" layoutX="344.0" prefHeight="768.0" prefWidth="680.0" />
+   </children>
+</AnchorPane>
