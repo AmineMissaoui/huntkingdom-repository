@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -53,6 +54,15 @@ public class LoginFXMLController implements Initializable {
             } catch (IOException ex) {
                 System.out.println("error" +ex.getMessage());
             }
+            //if (tfUsername.getText().isEmpty()) {
+            //showAlert(Alert.AlertType.ERROR, stage, "Form Error!","Please enter your email id");
+            //return;
+            //}
+            //if (tfPassword.getText().isEmpty()) {
+            //showAlert(Alert.AlertType.ERROR, stage, "Form Error!",
+            //    "Please enter a password");
+            //return;
+            //}
         });
     }    
 

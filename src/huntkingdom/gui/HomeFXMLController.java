@@ -41,6 +41,8 @@ public class HomeFXMLController implements Initializable {
     private JFXButton btnShop;
     @FXML
     private Pane homePane;
+    @FXML
+    private Pane homePaneEntreprise;
 
     /**
      * Initializes the controller class.
@@ -51,7 +53,7 @@ public class HomeFXMLController implements Initializable {
             ArrayList<User> users = new ServiceUser().getUsers();
             ArrayList<Entreprise> entreprises = new ServiceUser().getEntreprise();
             homePane.getChildren().add(showUsers(users));
-            homePane.getChildren().add(showEntreprises(entreprises));
+            homePaneEntreprise.getChildren().add(showEntreprises(entreprises));
         } catch (SQLException ex) {
             System.out.println("error" + ex.getMessage());
         }
@@ -64,6 +66,10 @@ public class HomeFXMLController implements Initializable {
             graphicUser.getChildren().add(new Label(u.getUsername()));
             graphicUser.getChildren().add(new Label(u.getFirst_name()));
             graphicUser.getChildren().add(new Label(u.getLast_name()));
+            if(u instanceof Entreprise){
+                graphicUser.getChildren().add(new Label(((Entreprise)u).getMatricule_fiscale()));
+            }
+            
             liste.getChildren().add(graphicUser);
         }
         //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));

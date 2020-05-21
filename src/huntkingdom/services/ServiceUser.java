@@ -52,7 +52,7 @@ public class ServiceUser implements IServiceUser{
 
     public ArrayList<User> getUsers() throws SQLException {
         ArrayList<User> results = new ArrayList<User>();
-        String request = "SELECT * FROM `USERS`";
+        String request = "SELECT * FROM `USERS` WHERE users_role = 'A hobbyist'";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
         while (rst.next()) {
@@ -67,14 +67,14 @@ public class ServiceUser implements IServiceUser{
     
     public ArrayList<Entreprise> getEntreprise() throws SQLException {
         ArrayList<Entreprise> results = new ArrayList<Entreprise>();
-        String request = "SELECT * FROM `USERS`";
+        String request = "SELECT * FROM `USERS` WHERE users_role = 'An entreprise'";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
         while (rst.next()) {
             Entreprise e = new Entreprise();
             e.setId(rst.getInt(1));
-            e.setRaisonSociale(rst.getString(12));
-            e.setMatriculeFiscale(rst.getString(13));
+            e.setRaisonSociale(rst.getString(13));
+            e.setMatriculeFiscale(rst.getString(14));
             results.add(e);
         }
         return results;
