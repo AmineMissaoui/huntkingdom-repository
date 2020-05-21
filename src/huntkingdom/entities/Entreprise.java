@@ -5,6 +5,8 @@
  */
 package huntkingdom.entities;
 
+import java.sql.Connection;
+
 /**
  *
  * @author amin
@@ -12,6 +14,8 @@ package huntkingdom.entities;
 public class Entreprise extends User{
     private String raisonSociale;
     private String matriculeFiscale;
+    
+    static Connection cnx;
 
     public Entreprise(){
         

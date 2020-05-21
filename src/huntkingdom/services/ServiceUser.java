@@ -45,7 +45,7 @@ public class ServiceUser implements IServiceUser{
         stm.executeUpdate(request);
     }
     public void addEntreprise(Entreprise e) throws SQLException {
-        String request = "INSERT INTO `USERS` (users_id, users_username,users_password,users_email,users_adress,users_state,users_city,users_role,users_active,users_raison_sociale,users_matricule_fiscale) VALUES (NULL, '" + e.getUsername()+"' , '" + e.getPassword() +"' ,'" + e.getEmail() +"', '" + e.getAdress() +"', '" + e.getState() +"' ,'" + e.getCity() +"', '" + e.getRole() +"',0,'" + e.getRaison_sociale() +"', '" + e.getRaison_sociale() +"' )";
+        String request = "INSERT INTO `USERS` (users_id, users_username,users_password,users_email,users_adress,users_state,users_city,users_role,users_active,users_raison_sociale,users_matricule_fiscale) VALUES (NULL, '" + e.getUsername()+"' , '" + e.getPassword() +"' ,'" + e.getEmail() +"', '" + e.getAdress() +"', '" + e.getState() +"' ,'" + e.getCity() +"', '" + e.getRole() +"',0,'" + e.getRaison_sociale() +"', '" + e.getMatricule_fiscale() +"' )";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
@@ -61,6 +61,21 @@ public class ServiceUser implements IServiceUser{
             u.setFirst_name(rst.getString(2));
             u.setLast_name(rst.getString(3));
             results.add(u);
+        }
+        return results;
+    }
+    
+    public ArrayList<Entreprise> getEntreprise() throws SQLException {
+        ArrayList<Entreprise> results = new ArrayList<Entreprise>();
+        String request = "SELECT * FROM `USERS`";
+        Statement stm = cnx.createStatement();
+        ResultSet rst = stm.executeQuery(request);
+        while (rst.next()) {
+            Entreprise e = new Entreprise();
+            e.setId(rst.getInt(1));
+            e.setRaisonSociale(rst.getString(12));
+            e.setMatriculeFiscale(rst.getString(13));
+            results.add(e);
         }
         return results;
     }

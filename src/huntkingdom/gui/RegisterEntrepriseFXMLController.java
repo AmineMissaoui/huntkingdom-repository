@@ -59,7 +59,7 @@ public class RegisterEntrepriseFXMLController implements Initializable {
     private JFXPasswordField tfPassword;
     @FXML
     private JFXComboBox<String> cbState;
-    ObservableList<String> list = FXCollections.observableArrayList("Tunis", "Ben Arouss");
+    ObservableList<String> list = FXCollections.observableArrayList("Tunis", "Ben Arous");
     @FXML
     private JFXButton btnRegister;
     @FXML
@@ -81,6 +81,7 @@ public class RegisterEntrepriseFXMLController implements Initializable {
             e.setAdress(tfAdress.getText());
             e.setState(cbState.getValue());
             e.setCity(tfCity.getText());
+            e.setRole(rbEntreprise.getText());
             
             ServiceUser se = new ServiceUser();
             try {
