@@ -66,7 +66,8 @@ public class User {
         this.active = active;
     }
     
-    public User(String email,String adress, String state, String city, String role, boolean active){
+    public User(String password, String email,String adress, String state, String city, String role, boolean active){
+        this.password = password;
         this.email = email;
         this.adress = adress;
         this.state = state;

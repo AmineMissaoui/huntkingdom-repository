@@ -59,7 +59,6 @@ public class RegisterFXMLController implements Initializable {
     private JFXTextField tfCity;
     @FXML
     private JFXButton btnRegister;
-    @FXML
     private Pane contentAreaTwo;
     @FXML
     private ToggleGroup user_role;
@@ -70,6 +69,8 @@ public class RegisterFXMLController implements Initializable {
     @FXML
     private JFXComboBox<String> cbState;
     ObservableList<String> list = FXCollections.observableArrayList("Tunis", "Ben Arouss");
+    @FXML
+    private Pane contentArea;
 
     /**
      * Initializes the controller class.
@@ -117,13 +118,10 @@ public class RegisterFXMLController implements Initializable {
     }
 
     @FXML
-    private void selectRadio(ActionEvent event) {
-        //String message="";
-        //if(rbMemeber.isSelected()){
-        //    message = rbMemeber.getText();
-        //}else if(rbEntreprise.isSelected()){
-        //    message = rbEntreprise.getText();
-        //}
+    private void selectRadio(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("RegisterEntrepriseFXML.fxml"));
+        contentArea.getChildren().removeAll();
+        contentArea.getChildren().setAll(fxml);
     }
 
 }

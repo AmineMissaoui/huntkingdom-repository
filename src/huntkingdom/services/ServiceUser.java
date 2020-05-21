@@ -5,6 +5,7 @@
  */
 package huntkingdom.services;
 
+import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
 import huntkingdom.interfaces.IServiceUser;
 import huntkingdom.utils.MyDB;
@@ -39,7 +40,12 @@ public class ServiceUser implements IServiceUser{
                 + "'" + u.getState() + "',"
                 + "'" + u.getCity() + "',"
                 + "'" + u.getRole() + "',"
-                + "Null )";
+                + "0 )";
+        Statement stm = cnx.createStatement();
+        stm.executeUpdate(request);
+    }
+    public void addEntreprise(Entreprise e) throws SQLException {
+        String request = "INSERT INTO `USERS` (users_id, users_username,users_password,users_email,users_adress,users_state,users_city,users_role,users_active,users_raison_sociale,users_matricule_fiscale) VALUES (NULL, '" + e.getUsername()+"' , '" + e.getPassword() +"' ,'" + e.getEmail() +"', '" + e.getAdress() +"', '" + e.getState() +"' ,'" + e.getCity() +"', '" + e.getRole() +"',0,'" + e.getRaison_sociale() +"', '" + e.getRaison_sociale() +"' )";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }

@@ -19,7 +19,7 @@
         <URL value="@registerfxml.css" />
     </stylesheets>
    <children>
-      <Pane fx:id="contentAreaTwo" layoutX="-2.0" prefHeight="768.0" prefWidth="686.0">
+      <Pane fx:id="contentArea" layoutX="-2.0" prefHeight="768.0" prefWidth="686.0">
          <children>
             <Label layoutX="195.0" layoutY="80.0" text="REGISTER">
                <font>
@@ -56,7 +56,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="196.0" layoutY="139.0" text="Are you?">
+            <Label layoutX="195.0" layoutY="139.0" text="Are you?">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -83,12 +83,12 @@
                </font>
             </Label>
             <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="564.0" prefHeight="25.0" prefWidth="131.0" />
-            <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="166.0" onAction="#selectRadio" selected="true" text="A hobbyist">
+            <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="166.0" selected="true" text="A hobbyist">
                <toggleGroup>
                   <ToggleGroup fx:id="user_role" />
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="rbEntreprise" layoutX="312.0" layoutY="166.0" text="An entreprise" toggleGroup="$user_role" />
+            <JFXRadioButton fx:id="rbEntreprise" layoutX="312.0" layoutY="166.0" onAction="#selectRadio" text="An entreprise" toggleGroup="$user_role" />
             <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="620.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
