@@ -55,16 +55,20 @@ public class LoginFXMLController implements Initializable {
                 String username = tfUsername.getText();
                 String password = tfPassword.getText();
                 if (username.isEmpty()) {
+                    infoBox("Please enter your email", null, "WARNIG");
                     System.out.println("email empty");
                 }
                 if (password.isEmpty()) {
+                    infoBox("Please enter your password", null, "WARNIG");
                     System.out.println("password empty");
                 } else {
                     ServiceUser se = new ServiceUser();
                     boolean flag = se.validateCredentials(username, password);
                     if (!flag) {
+                        infoBox("Wrong credentials", null, "ERROR");
                         System.out.println("wrong credentials");
                     } else {
+                        infoBox("welcome", null, "sccess");
                         System.out.println("good credentials");
                         Stage stage = (Stage) btnLogin.getScene().getWindow();
                         Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
@@ -90,7 +94,13 @@ public class LoginFXMLController implements Initializable {
     private void closeApp(MouseEvent event) {
         System.exit(0);
     }
-
+    public static void infoBox(String infoMessage, String headerText, String title){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText(infoMessage);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.showAndWait();
+    }
 
 
 }
