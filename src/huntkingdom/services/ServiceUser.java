@@ -31,7 +31,7 @@ public class ServiceUser implements IServiceUser{
         cnx = MyDB.getInstance().getConnection();
     }
     public boolean validateCredentials(String email, String password) {
-        String request = "SELECT * FROM `USERS` WHERE users_email = ? and users_password = ?";
+        String request = "SELECT * FROM `USERS` WHERE users_username = ? and users_password = ?";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = cnx.prepareStatement(request);
@@ -43,11 +43,13 @@ public class ServiceUser implements IServiceUser{
         if(resultSet.next()){
             System.out.println("one user");
             return true;
+        }else{
+            System.out.println("no user");
+            return false;
         }
         } catch (SQLException ex) {
             System.out.println("db-error" + ex.getMessage());
         }   
-            System.out.println("no user");
             return false;
             
     }

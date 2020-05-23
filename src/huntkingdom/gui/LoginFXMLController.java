@@ -59,21 +59,20 @@ public class LoginFXMLController implements Initializable {
                 }
                 if (password.isEmpty()) {
                     System.out.println("password empty");
-                }
-                ServiceUser se = new ServiceUser();
-                boolean flag = se.validateCredentials(username, password);
-
-                if (!flag) {
-                    System.out.println("wrong credentials");
                 } else {
-                    System.out.println("good credentials");
-                    Stage stage = (Stage) btnLogin.getScene().getWindow();
-                    Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
-                    Scene newScene = new Scene(newParent);
-                    stage.setScene(newScene);
-                    stage.show();
+                    ServiceUser se = new ServiceUser();
+                    boolean flag = se.validateCredentials(username, password);
+                    if (!flag) {
+                        System.out.println("wrong credentials");
+                    } else {
+                        System.out.println("good credentials");
+                        Stage stage = (Stage) btnLogin.getScene().getWindow();
+                        Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
+                        Scene newScene = new Scene(newParent);
+                        stage.setScene(newScene);
+                        stage.show();
+                    }
                 }
-
             } catch (IOException ex) {
                 System.out.println("error" + ex.getMessage());
             }
@@ -92,9 +91,6 @@ public class LoginFXMLController implements Initializable {
         System.exit(0);
     }
 
-    @FXML
-    private void loginAction(ActionEvent event) throws SQLException {
-        System.out.println("test");
-    }
+
 
 }
