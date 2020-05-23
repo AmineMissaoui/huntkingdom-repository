@@ -15,6 +15,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,10 +26,31 @@ public class ServiceUser implements IServiceUser{
 
     private Connection cnx;
     
+    
     public ServiceUser(){
         cnx = MyDB.getInstance().getConnection();
     }
-
+    public boolean validateCredentials(String email, String password) {
+        String request = "SELECT * FROM `USERS` WHERE users_email = ? and users_password = ?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = cnx.prepareStatement(request);
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+            System.out.println(preparedStatement);
+            ResultSet resultSet = preparedStatement.executeQuery();
+        
+        if(resultSet.next()){
+            System.out.println("one user");
+            return true;
+        }
+        } catch (SQLException ex) {
+            System.out.println("db-error" + ex.getMessage());
+        }   
+            System.out.println("no user");
+            return false;
+            
+    }
     public void addUser(User u) throws SQLException {
         String request = "INSERT INTO `USERS` (users_id, users_first_name, users_last_name,users_username,users_password,users_email,users_birthdate,users_adress,users_state,users_city,users_role,users_active) VALUES (NULL, "
                 + "'" + u.getFirst_name() + "' , "
