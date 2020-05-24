@@ -15,8 +15,8 @@ import java.util.ArrayList;
  * @author Akkari
  */
 public interface IServicesElearning {
-    public boolean addLesson(Elearning e) throws SQLException;
+    public void addLesson(Elearning e) throws SQLException;
     public ArrayList<Elearning> getlessons() throws SQLException;
-    public boolean updateLesson(Elearning e) throws SQLException;
-    public boolean deleteLesson(Elearning u) throws SQLException;
+    public void updateLesson(Elearning e) throws SQLException;
+    public void deleteLesson(Elearning u) throws SQLException;
 }
