@@ -23,19 +23,7 @@ public class HuntKingdom {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Connection conection = new MyDB().getInstance().getConnection();
-        ServiceUser su = new ServiceUser();
         
-        User u1 = new User("Amine", "Missaoui");
-        User u2 = new User("Akrem", "Amdouni");
-        
-
-        
-        try {
-            System.out.println(su.getUsers());
-        } catch (SQLException ex) {
-            System.out.println("error" + ex.getMessage());
-        }
         
     }
     

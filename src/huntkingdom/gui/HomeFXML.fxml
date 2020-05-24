@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.HomeFXMLController">
+    <stylesheets>
+        <URL value="@homefxml.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="769.0" prefWidth="1036.0">
+         <top>
+            <AnchorPane prefHeight="52.0" prefWidth="1027.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="-100.0" endY="28.0" startX="-100.0" startY="-23.0" />
+                  <Line endX="-100.0" endY="20.5" layoutX="300.0" layoutY="30.0" startX="-100.0" startY="-31.0" />
+                  <Line endX="1027.0" layoutX="8.0" layoutY="52.0" startX="-7.5" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="977.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="943.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/message.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="908.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/bell.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="716.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="716.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+                  <JFXButton fx:id="btnHome" layoutY="90.0" prefHeight="32.0" prefWidth="200.0" ripplerFill="#ae5656" text="HOME" />
+                  <JFXButton fx:id="btnCalendar" layoutX="-1.0" layoutY="123.0" prefHeight="32.0" prefWidth="200.0" text="CALENDAR" />
+                  <JFXButton fx:id="btnEvent" layoutX="-1.0" layoutY="156.0" prefHeight="32.0" prefWidth="200.0" text="EVENT" />
+                  <JFXButton fx:id="btnElearning" layoutX="-1.0" layoutY="189.0" prefHeight="32.0" prefWidth="200.0" text="ELEARNING" />
+                  <JFXButton fx:id="btnShop" layoutX="-1.0" layoutY="223.0" prefHeight="32.0" prefWidth="200.0" text="SHOP" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="716.0" prefWidth="837.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTabPane layoutX="-1.0" layoutY="110.0" prefHeight="217.0" prefWidth="837.0">
+                     <tabs>
+                        <Tab text="Members">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane fx:id="homePane" prefHeight="180.0" prefWidth="837.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="entreprises">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane fx:id="homePaneEntreprise" prefHeight="180.0" prefWidth="837.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+                  <Label fx:id="labelUserName" layoutX="34.0" layoutY="21.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

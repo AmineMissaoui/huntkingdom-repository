@@ -6,8 +6,6 @@
 package huntkingdom;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,25 +18,24 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Me
+
+ * @author AmineMissaoui
+
  */
 public class NewFXMain extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
-       Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/gui/AddGroupFXML.fxml"));
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());;
-        }
-       Scene scene=new Scene(root);
-       primaryStage.setScene(scene);
-       primaryStage.show();
-       
+    public void start(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/WecomeFXML.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
-    
 }
