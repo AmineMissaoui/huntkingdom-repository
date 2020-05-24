@@ -30,12 +30,12 @@ public class ServiceUser implements IServiceUser{
     public ServiceUser(){
         cnx = MyDB.getInstance().getConnection();
     }
-    public boolean validateCredentials(String email, String password) {
+    public boolean validateCredentials(String username, String password) {
         String request = "SELECT * FROM `USERS` WHERE users_username = ? and users_password = ?";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = cnx.prepareStatement(request);
-            preparedStatement.setString(1, email);
+            preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             System.out.println(preparedStatement);
             ResultSet resultSet = preparedStatement.executeQuery();

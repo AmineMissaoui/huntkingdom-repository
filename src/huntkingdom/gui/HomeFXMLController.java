@@ -8,6 +8,7 @@ package huntkingdom.gui;
 import com.jfoenix.controls.JFXButton;
 import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
+import huntkingdom.entities.UserSession;
 import huntkingdom.services.ServiceUser;
 import java.net.URL;
 import java.sql.SQLException;
@@ -43,6 +44,8 @@ public class HomeFXMLController implements Initializable {
     private Pane homePane;
     @FXML
     private Pane homePaneEntreprise;
+    @FXML
+    private Label labelUserName;
 
     /**
      * Initializes the controller class.
@@ -50,10 +53,12 @@ public class HomeFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            
             ArrayList<User> users = new ServiceUser().getUsers();
             ArrayList<Entreprise> entreprises = new ServiceUser().getEntreprise();
             homePane.getChildren().add(showUsers(users));
             homePaneEntreprise.getChildren().add(showEntreprises(entreprises));
+            //labelUserName.setText(UserSession.getUsername());
         } catch (SQLException ex) {
             System.out.println("error" + ex.getMessage());
         }
