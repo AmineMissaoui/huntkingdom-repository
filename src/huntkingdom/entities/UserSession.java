@@ -19,10 +19,14 @@ public final class UserSession {
         this.username = username;
     }
 
-    public static UserSession getInstance(String username) {
+    public static UserSession setInstance(String username) {
         if (instance == null) {
             instance = new UserSession(username);
         }
+        return instance;
+    }
+    
+    public static UserSession getInstance(){
         return instance;
     }
 
