@@ -46,12 +46,21 @@ public class HomeFXMLController implements Initializable {
     private Pane homePaneEntreprise;
     @FXML
     private Label labelUserName;
+    UserSession session;
 
+    public HomeFXMLController() {
+        session = UserSession.getInstance();
+    }
+    
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+            
+        labelUserName.setText(session.getUsername());
+        
         try {
             
             ArrayList<User> users = new ServiceUser().getUsers();

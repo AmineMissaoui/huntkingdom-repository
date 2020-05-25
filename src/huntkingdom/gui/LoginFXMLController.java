@@ -71,12 +71,13 @@ public class LoginFXMLController implements Initializable {
                     } else {
                         infoBox("welcome", null, "sccess");
                         System.out.println("good credentials");
+                        UserSession.setInstance(username);
                         Stage stage = (Stage) btnLogin.getScene().getWindow();
                         Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
                         Scene newScene = new Scene(newParent);
                         stage.setScene(newScene);
                         stage.show();
-                        UserSession.getInstance(username);
+                        UserSession.setInstance(username);
                     }
                 }
             } catch (IOException ex) {
