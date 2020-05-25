@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTabPane?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,24 +20,25 @@
          <top>
             <AnchorPane prefHeight="52.0" prefWidth="1027.0" BorderPane.alignment="CENTER">
                <children>
-                  <Line endX="-100.0" endY="28.0" startX="-100.0" startY="-23.0" />
-                  <Line endX="-100.0" endY="20.5" layoutX="300.0" layoutY="30.0" startX="-100.0" startY="-31.0" />
-                  <Line endX="1027.0" layoutX="8.0" layoutY="52.0" startX="-7.5" />
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="977.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="-100.0" endY="37.5" layoutX="633.0" layoutY="21.0" startX="-100.0" startY="-23.0" />
+                  <Line endX="-100.00003051757812" endY="28.5" layoutX="300.0" layoutY="30.0" startX="-100.0" startY="-31.0" />
+                  <Line endX="1027.0" layoutX="8.0" layoutY="59.0" startX="-7.5" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="977.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/user.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="943.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="943.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/message.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="908.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="908.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/bell.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="labelUserName" layoutX="965.0" layoutY="39.0" text="Username" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </top>
@@ -58,29 +57,7 @@
          <center>
             <AnchorPane prefHeight="716.0" prefWidth="837.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTabPane layoutX="-1.0" layoutY="110.0" prefHeight="217.0" prefWidth="837.0">
-                     <tabs>
-                        <Tab text="Members">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <Pane fx:id="homePane" prefHeight="180.0" prefWidth="837.0" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </Tab>
-                        <Tab text="entreprises">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <Pane fx:id="homePaneEntreprise" prefHeight="180.0" prefWidth="837.0" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </Tab>
-                     </tabs>
-                  </JFXTabPane>
-                  <Label fx:id="labelUserName" layoutX="34.0" layoutY="21.0" />
+                  <Pane fx:id="homeCenterPane" layoutX="10.0" layoutY="6.0" />
                </children>
             </AnchorPane>
          </center>

@@ -6,10 +6,12 @@
 package huntkingdom.gui;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXToggleButton;
 import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
 import huntkingdom.entities.UserSession;
 import huntkingdom.services.ServiceUser;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,7 +19,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -41,12 +45,11 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private JFXButton btnShop;
     @FXML
-    private Pane homePane;
-    @FXML
-    private Pane homePaneEntreprise;
-    @FXML
     private Label labelUserName;
+    
     UserSession session;
+    @FXML
+    private Pane homeCenterPane;
 
     public HomeFXMLController() {
         session = UserSession.getInstance();
@@ -61,45 +64,17 @@ public class HomeFXMLController implements Initializable {
             
         labelUserName.setText(session.getUsername());
         
+                Parent fxml;
         try {
-            
-            ArrayList<User> users = new ServiceUser().getUsers();
-            ArrayList<Entreprise> entreprises = new ServiceUser().getEntreprise();
-            homePane.getChildren().add(showUsers(users));
-            homePaneEntreprise.getChildren().add(showEntreprises(entreprises));
-            //labelUserName.setText(UserSession.getUsername());
-        } catch (SQLException ex) {
+            fxml = FXMLLoader.load(getClass().getResource("AdminValidationFXML.fxml"));
+            homeCenterPane.getChildren().removeAll();
+            homeCenterPane.getChildren().setAll(fxml);
+        } catch (IOException ex) {
             System.out.println("error" + ex.getMessage());
         }
+
     }
 
-    public VBox showUsers(ArrayList<User> users){
-        VBox liste = new VBox();
-        for(User u : users){
-            HBox graphicUser = new HBox();
-            graphicUser.getChildren().add(new Label(u.getUsername()));
-            graphicUser.getChildren().add(new Label(u.getFirst_name()));
-            graphicUser.getChildren().add(new Label(u.getLast_name()));
-            if(u instanceof Entreprise){
-                graphicUser.getChildren().add(new Label(((Entreprise)u).getMatricule_fiscale()));
-            }
-            
-            liste.getChildren().add(graphicUser);
-        }
-        //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
-        return liste;
-    }
-    public VBox showEntreprises(ArrayList<Entreprise> entreprises){
-        VBox liste = new VBox();
-        for(Entreprise e : entreprises){
-            HBox graphicUser = new HBox();
-            graphicUser.getChildren().add(new Label(e.getUsername()));
-            graphicUser.getChildren().add(new Label(e.getRaison_sociale()));
-            graphicUser.getChildren().add(new Label(e.getMatricule_fiscale()));
-            liste.getChildren().add(graphicUser);
-        }
-        //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
-        return liste;
-    }
+
     
 }
