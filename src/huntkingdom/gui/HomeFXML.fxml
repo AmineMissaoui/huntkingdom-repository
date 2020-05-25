@@ -58,29 +58,33 @@
          <center>
             <AnchorPane prefHeight="716.0" prefWidth="837.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTabPane layoutX="-1.0" layoutY="110.0" prefHeight="217.0" prefWidth="837.0">
-                     <tabs>
-                        <Tab text="Members">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <Pane fx:id="homePane" prefHeight="180.0" prefWidth="837.0" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </Tab>
-                        <Tab text="entreprises">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <Pane fx:id="homePaneEntreprise" prefHeight="180.0" prefWidth="837.0" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </Tab>
-                     </tabs>
-                  </JFXTabPane>
-                  <Label fx:id="labelUserName" layoutX="34.0" layoutY="21.0" />
+                  <Pane layoutY="21.0">
+                     <children>
+                        <JFXTabPane layoutY="89.0" prefHeight="217.0" prefWidth="837.0">
+                           <tabs>
+                              <Tab text="Members">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane fx:id="homePane" prefHeight="180.0" prefWidth="837.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="entreprises">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane fx:id="homePaneEntreprise" prefHeight="180.0" prefWidth="837.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                           </tabs>
+                        </JFXTabPane>
+                        <Label fx:id="labelUserName" layoutX="35.0" />
+                     </children>
+                  </Pane>
                </children>
             </AnchorPane>
          </center>

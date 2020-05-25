@@ -5,18 +5,14 @@
  */
 package huntkingdom.gui;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXToggleButton;
 import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
-import huntkingdom.entities.UserSession;
 import huntkingdom.services.ServiceUser;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -29,39 +25,19 @@ import javafx.scene.layout.VBox;
  *
  * @author AmineMissaoui
  */
-public class HomeFXMLController implements Initializable {
+public class AdminValidationFXMLController implements Initializable {
 
-    @FXML
-    private JFXButton btnHome;
-    @FXML
-    private JFXButton btnCalendar;
-    @FXML
-    private JFXButton btnEvent;
-    @FXML
-    private JFXButton btnElearning;
-    @FXML
-    private JFXButton btnShop;
-    @FXML
     private Pane homePane;
     @FXML
     private Pane homePaneEntreprise;
-    @FXML
-    private Label labelUserName;
-    UserSession session;
 
-    public HomeFXMLController() {
-        session = UserSession.getInstance();
-    }
-    
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-            
-        labelUserName.setText(session.getUsername());
-        
+        //labelUserName.setText(session.getUsername());
+
         try {
             ArrayList<User> users = new ServiceUser().getUsers();
             ArrayList<Entreprise> entreprises = new ServiceUser().getEntreprise();
@@ -73,9 +49,9 @@ public class HomeFXMLController implements Initializable {
         }
     }
 
-    public VBox showUsers(ArrayList<User> users){
+    public VBox showUsers(ArrayList<User> users) {
         VBox liste = new VBox();
-        for(User u : users){
+        for (User u : users) {
             HBox graphicUser = new HBox();
             graphicUser.getChildren().add(new Label(u.getUsername()));
             graphicUser.getChildren().add(new Label(u.getFirst_name()));
@@ -86,9 +62,10 @@ public class HomeFXMLController implements Initializable {
         //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
         return liste;
     }
-    public VBox showEntreprises(ArrayList<Entreprise> entreprises){
+
+    public VBox showEntreprises(ArrayList<Entreprise> entreprises) {
         VBox liste = new VBox();
-        for(Entreprise e : entreprises){
+        for (Entreprise e : entreprises) {
             HBox graphicUser = new HBox();
             graphicUser.getChildren().add(new Label(e.getUsername()));
             graphicUser.getChildren().add(new Label(e.getRaison_sociale()));
@@ -98,5 +75,5 @@ public class HomeFXMLController implements Initializable {
         //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
         return liste;
     }
-    
+
 }
