@@ -27,6 +27,7 @@ import javafx.scene.layout.VBox;
  */
 public class AdminValidationFXMLController implements Initializable {
 
+    @FXML
     private Pane homePane;
     @FXML
     private Pane homePaneEntreprise;

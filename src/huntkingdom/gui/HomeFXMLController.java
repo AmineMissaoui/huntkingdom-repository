@@ -11,6 +11,7 @@ import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
 import huntkingdom.entities.UserSession;
 import huntkingdom.services.ServiceUser;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,7 +19,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -42,12 +45,11 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private JFXButton btnShop;
     @FXML
-    private Pane homePane;
-    @FXML
-    private Pane homePaneEntreprise;
-    @FXML
     private Label labelUserName;
+    
     UserSession session;
+    @FXML
+    private Pane homeCenterPane;
 
     public HomeFXMLController() {
         session = UserSession.getInstance();
@@ -62,6 +64,14 @@ public class HomeFXMLController implements Initializable {
             
         labelUserName.setText(session.getUsername());
         
+                Parent fxml;
+        try {
+            fxml = FXMLLoader.load(getClass().getResource("AdminValidationFXML.fxml"));
+            homeCenterPane.getChildren().removeAll();
+            homeCenterPane.getChildren().setAll(fxml);
+        } catch (IOException ex) {
+            System.out.println("error" + ex.getMessage());
+        }
 
     }
 
