@@ -5,6 +5,9 @@
  */
 package huntkingdom.entities;
 
+import huntkingdom.services.ServiceUser;
+import java.sql.SQLException;
+
 /**
  *
  * @author AmineMissaoui
@@ -15,13 +18,17 @@ public final class UserSession {
 
     private String username;
 
-    private UserSession(String username) {
-        this.username = username;
+    private UserSession() {
+        //this.username = username;
     }
 
-    public static UserSession setInstance(String username) {
+    public static UserSession setInstance(String username) throws SQLException {
         if (instance == null) {
-            instance = new UserSession(username);
+            ServiceUser se = new ServiceUser();
+            System.out.println(username + " yes");
+            se.getByUsername(username);
+            User u = new User();
+            instance = new UserSession();
         }
         return instance;
     }

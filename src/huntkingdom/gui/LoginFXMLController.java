@@ -82,6 +82,8 @@ public class LoginFXMLController implements Initializable {
                 }
             } catch (IOException ex) {
                 System.out.println("error" + ex.getMessage());
+            } catch (SQLException ex) {
+                System.out.println("error z" + ex.getMessage());
             }
         });
     }
