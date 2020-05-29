@@ -50,6 +50,8 @@ public class HomeFXMLController implements Initializable {
     UserSession session;
     @FXML
     private Pane homeCenterPane;
+    @FXML
+    private Label labelBirthdate;
 
     public HomeFXMLController() {
         session = UserSession.getInstance();
@@ -63,7 +65,7 @@ public class HomeFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
             
         labelUserName.setText(session.getUsername());
-        
+        labelBirthdate.setText(session.getBirthdate());
                 Parent fxml;
         try {
             fxml = FXMLLoader.load(getClass().getResource("AdminValidationFXML.fxml"));

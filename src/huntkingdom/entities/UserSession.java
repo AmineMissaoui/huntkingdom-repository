@@ -7,6 +7,8 @@ package huntkingdom.entities;
 
 import huntkingdom.services.ServiceUser;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,18 +19,22 @@ public final class UserSession {
     private static UserSession instance;
 
     private String username;
+    private String birthdate;
 
-    private UserSession() {
-        //this.username = username;
+    private UserSession(String username) {
+        ServiceUser se = new ServiceUser();
+        try {
+            User u = se.getByUsername(username);
+            this.username = u.getUsername();
+            this.birthdate = u.getBirthdate();
+        } catch (SQLException ex) {
+            System.out.println("error in constructor" + ex.getMessage());
+        }
     }
 
     public static UserSession setInstance(String username) throws SQLException {
         if (instance == null) {
-            ServiceUser se = new ServiceUser();
-            System.out.println(username + " yes");
-            se.getByUsername(username);
-            User u = new User();
-            instance = new UserSession();
+            instance = new UserSession(username);
         }
         return instance;
     }
@@ -39,6 +45,10 @@ public final class UserSession {
 
     public String getUsername() {
         return this.username;
+    }
+    
+    public String getBirthdate() {
+        return this.birthdate;
     }
 
     public void clearUserSession() {

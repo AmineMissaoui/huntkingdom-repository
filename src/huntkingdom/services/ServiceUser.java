@@ -138,10 +138,10 @@ public class ServiceUser implements IServiceUser{
             u.setState(rst.getString(9));
             u.setCity(rst.getString(10));
             u.setRole(rst.getString(11));
-            if(u instanceof User){
-                ((Entreprise) u).setRaisonSociale(rst.getString(13));
-                ((Entreprise) u).setRaisonSociale(rst.getString(14));
-            }
+            //if(u instanceof User){
+            //    ((Entreprise) u).setRaisonSociale(rst.getString(13));
+            //    ((Entreprise) u).setRaisonSociale(rst.getString(14));
+            //}
         }
         System.out.println(u.getId());
         return u;
