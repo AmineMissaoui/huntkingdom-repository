@@ -13,6 +13,7 @@ import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import huntkingdom.entities.User;
 import huntkingdom.services.ServiceUser;
+import huntkingdom.utils.JavaMail;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +34,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javax.mail.MessagingException;
 import sun.misc.Launcher;
 
 /**
@@ -111,6 +113,11 @@ public class RegisterFXMLController implements Initializable {
                 
             } catch (SQLException ex) {
                 System.out.println("Error" + ex.getMessage());
+            }
+            try {
+                JavaMail.sendMail("missaoui.amine.1988@gmail.com");
+            } catch (MessagingException ex) {
+                System.out.println("error while sending the email" + ex.getMessage());
             }
         });
     }    
