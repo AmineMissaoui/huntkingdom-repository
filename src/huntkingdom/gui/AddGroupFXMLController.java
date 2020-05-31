@@ -5,23 +5,34 @@
  */
 package huntkingdom.gui;
 
+import huntkingdom.HuntKingdom;
 import huntkingdom.entities.Group;
 import huntkingdom.services.GroupService;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import huntkingdom.gui.RootFXMLController;
 
 /**
  * FXML Controller class
@@ -38,6 +49,14 @@ public class AddGroupFXMLController implements Initializable {
     private Button btnCreate;
     @FXML
     private Button btnGroups;
+    @FXML
+    private Button btnImage;
+    @FXML
+    private ListView listeView;
+    @FXML
+    private BorderPane groupBP;
+
+    private File selectedFile;
 
     /**
      * Initializes the controller class.
@@ -49,27 +68,50 @@ public class AddGroupFXMLController implements Initializable {
             g.setNom(tfGroupName.getText());
             g.setDescription(taDescription.getText());
                             GroupService gs = new GroupService();
+                            if(selectedFile !=null){
+             File myImage=new File(selectedFile.getAbsolutePath());
+             g.setImageFile(myImage);
+                            }
             try {
+
                 gs.addGroup(g);
             } catch (SQLException ex) {
                 System.out.println( ex.getMessage())  ;
-            }
-
+            } 
             
             
-        });
-        btnGroups.setOnAction((event) -> {
-            Stage stage=(Stage) btnCreate.getScene().getWindow();
-            try {
-                Parent MyNewParent=FXMLLoader.load(getClass().getResource("./ShowGroupsFXML.fxml"));
-                Scene newScene=new Scene(MyNewParent);
-                stage.setScene(newScene);
-                stage.setTitle("Groups");
-                stage.show();
-                        } catch (IOException ex) {
-                System.out.println(ex.getMessage());;
-            }
         });
     }    
+        @FXML
+    private void showGroups(MouseEvent event) {
+        Scene myscene= btnGroups.getScene();
+        
+        
+    groupBP.setRight(getPage("showGroups"));
+    }
+
     
+    public void buttonImage(ActionEvent event ){
+                FileChooser fc=new FileChooser();
+            selectedFile=fc.showOpenDialog(null);
+            if(selectedFile !=null){
+            listeView.getItems().add(selectedFile.getAbsolutePath());
+            }
+            else
+                System.out.println("invalid");
+    }
+
+        private Pane getPage(String fileName){
+        Pane view=null;
+    URL fileURL =HuntKingdom.class.getResource("/huntkingdom/gui/"+fileName+".fxml");
+        try {
+            view=FXMLLoader.load(fileURL);
+                 //   Parent newScene=new Parent(view);
+
+        } catch (IOException ex) {
+            System.out.println("erreur de chargement");
+        }
+        return view;
+}
+
 }
