@@ -5,6 +5,8 @@
  */
 package huntkingdom.entities;
 
+import java.io.File;
+
 /**
  *
  * @author Me
@@ -12,18 +14,34 @@ package huntkingdom.entities;
 public class Group {
     private int id;
     private String nom,description;
+    private File imageFile;
     public Group(){}
-    public Group (int id, String nom,String description){
+    public Group (int id, String nom,String description, File imageFile){
+    this.id=id;
+    this.description=description;
+    this.nom=nom;
+    this.imageFile=imageFile;
+    
+    }
+        public Group (int id, String nom,String description){
     this.id=id;
     this.description=description;
     this.nom=nom;
     
     }
-        public Group ( String nom,String description){
+
+        public Group ( String nom,String description, File imageFile){
     this.description=description;
     this.nom=nom;
-    
+        this.imageFile=imageFile;
+
     }
+                public Group ( String nom,String description){
+    this.description=description;
+    this.nom=nom;
+
+    }
+
 
     /**
      * @return the id
@@ -70,6 +88,20 @@ public class Group {
 
     public String toString(){
     return "id= "+id+" nom= "+nom+" description ="+description;
+    }
+
+    /**
+     * @return the imageFile
+     */
+    public File getImageFile() {
+        return imageFile;
+    }
+
+    /**
+     * @param imageFile the imageFile to set
+     */
+    public void setImageFile(File imageFile) {
+        this.imageFile = imageFile;
     }
     
 }
