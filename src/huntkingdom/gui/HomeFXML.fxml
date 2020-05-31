@@ -39,6 +39,7 @@
                      </image>
                   </ImageView>
                   <Label fx:id="labelUserName" layoutX="965.0" layoutY="39.0" text="Username" textAlignment="CENTER" />
+                  <Label fx:id="labelBirthdate" layoutX="689.0" layoutY="28.0" text="Birthdate" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </top>

@@ -118,4 +118,32 @@ public class ServiceUser implements IServiceUser{
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
+    public User getByUsername(String username) throws SQLException{
+        User u = new User();
+        System.out.println(username + "the user requested");
+        String request = "SELECT * FROM `USERS` WHERE users_username = '"+username+"'";
+        System.out.println(request);
+        Statement stm = cnx.createStatement();
+        ResultSet rst = stm.executeQuery(request);
+        //System.out.println(rst);
+        if(rst.next()){
+            u.setId(rst.getInt(1));
+            u.setFirst_name(rst.getString(2));
+            u.setLast_name(rst.getString(3));
+            u.setUsername(rst.getString(4));
+            u.setPassword(rst.getString(5));
+            u.setEmail(rst.getString(6));
+            u.setBirthdate(rst.getString(7));
+            u.setAdress(rst.getString(8));
+            u.setState(rst.getString(9));
+            u.setCity(rst.getString(10));
+            u.setRole(rst.getString(11));
+            //if(u instanceof User){
+            //    ((Entreprise) u).setRaisonSociale(rst.getString(13));
+            //    ((Entreprise) u).setRaisonSociale(rst.getString(14));
+            //}
+        }
+        System.out.println(u.getId());
+        return u;
+    }
 }
