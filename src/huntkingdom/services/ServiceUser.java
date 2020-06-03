@@ -113,6 +113,13 @@ public class ServiceUser implements IServiceUser{
         pst.setInt(3, u.getId());
     }
     
+    public void updateUserState(User u) throws SQLException {
+        String request = "UPDATE `users` SET `users_active` = ? WHERE users_id=?";
+        PreparedStatement pst = cnx.prepareStatement(request);
+        pst.setInt(1, u.getActive());
+        pst.setInt(2, u.getId());
+    }
+    
     public void deleteUser(User u) throws SQLException{
         String request = "DELETE FROM `USERS` WHERE users_id ="+ u.getId();
         Statement stm = cnx.createStatement();
@@ -138,6 +145,7 @@ public class ServiceUser implements IServiceUser{
             u.setState(rst.getString(9));
             u.setCity(rst.getString(10));
             u.setRole(rst.getString(11));
+            u.setActive(rst.getInt(12));
             //if(u instanceof User){
             //    ((Entreprise) u).setRaisonSociale(rst.getString(13));
             //    ((Entreprise) u).setRaisonSociale(rst.getString(14));

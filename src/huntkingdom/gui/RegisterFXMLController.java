@@ -97,7 +97,11 @@ public class RegisterFXMLController implements Initializable {
             }else if(rbEntreprise.isSelected()){
             u.setRole(rbEntreprise.getText());
             }
-            
+            try {
+                JavaMail.sendMail(tfEmail.getText(),tfFirstName.getText(),tfLastname.getText(),tfUsername.getText(), tfPassword.getText());
+            } catch (MessagingException ex) {
+                System.out.println("error while sending the email" + ex.getMessage());
+            }
             ServiceUser su = new ServiceUser();
             try {
                 su.addUser(u);
@@ -114,11 +118,7 @@ public class RegisterFXMLController implements Initializable {
             } catch (SQLException ex) {
                 System.out.println("Error" + ex.getMessage());
             }
-            try {
-                JavaMail.sendMail("missaoui.amine.1988@gmail.com");
-            } catch (MessagingException ex) {
-                System.out.println("error while sending the email" + ex.getMessage());
-            }
+
         });
     }    
 

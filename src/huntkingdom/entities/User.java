@@ -30,14 +30,14 @@ public class User {
     private String state;
     private String city;
     private String role;
-    private boolean active;
+    private int active;
 
     static Connection cnx;
 
     public User() {
     }
 
-    public User(String username, String password, String first_name, String last_name, String email, String birthdate, String adress, String state, String city, String role, boolean active) {
+    public User(String username, String password, String first_name, String last_name, String email, String birthdate, String adress, String state, String city, String role, int active) {
         this.username = username;
         this.password = password;
         this.first_name = first_name;
@@ -51,7 +51,7 @@ public class User {
         this.active = active;
     }
 
-    public User(int id, String username, String password, String first_name, String last_name, String email, String birthdate, String adress, String state, String city, String role, boolean active) {
+    public User(int id, String username, String password, String first_name, String last_name, String email, String birthdate, String adress, String state, String city, String role, int active) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -66,7 +66,7 @@ public class User {
         this.active = active;
     }
     
-    public User(String password, String email,String adress, String state, String city, String role, boolean active){
+    public User(String password, String email,String adress, String state, String city, String role, int active){
         this.password = password;
         this.email = email;
         this.adress = adress;
@@ -112,7 +112,7 @@ public class User {
         return role;
     }
 
-    public boolean isActive() {
+    public int getActive() {
         return active;
     }
 
@@ -160,7 +160,7 @@ public class User {
         this.role = role;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(int active) {
         this.active = active;
     }
 

@@ -40,6 +40,7 @@
                   </ImageView>
                   <Label fx:id="labelUserName" layoutX="965.0" layoutY="39.0" text="Username" textAlignment="CENTER" />
                   <Label fx:id="labelBirthdate" layoutX="689.0" layoutY="28.0" text="Birthdate" textAlignment="CENTER" />
+                  <Label fx:id="labelRole" layoutX="599.0" layoutY="37.0" text="Role" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </top>
