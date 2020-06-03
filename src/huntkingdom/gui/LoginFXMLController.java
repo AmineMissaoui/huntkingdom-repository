@@ -63,21 +63,24 @@ public class LoginFXMLController implements Initializable {
                     infoBox("Please enter your password", null, "WARNIG");
                     System.out.println("password empty");
                 } else {
+
                     ServiceUser se = new ServiceUser();
                     boolean flag = se.validateCredentials(username, password);
                     if (!flag) {
                         infoBox("Wrong credentials", null, "ERROR");
                         System.out.println("wrong credentials");
                     } else {
-                        infoBox("welcome", null, "sccess");
-                        System.out.println("good credentials");
                         UserSession.setInstance(username);
-                        Stage stage = (Stage) btnLogin.getScene().getWindow();
-                        Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
-                        Scene newScene = new Scene(newParent);
-                        stage.setScene(newScene);
-                        stage.show();
-                        UserSession.setInstance(username);
+                        if (UserSession.getInstance().getActive() == 1) {
+                            infoBox("welcome", null, "sccess");
+                            Stage stage = (Stage) btnLogin.getScene().getWindow();
+                            Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
+                            Scene newScene = new Scene(newParent);
+                            stage.setScene(newScene);
+                            stage.show();
+                        } else {
+                            infoBox("Account disabled Please contact Administrator", null, "ERROR");
+                        }
                     }
                 }
             } catch (IOException ex) {
@@ -99,13 +102,13 @@ public class LoginFXMLController implements Initializable {
     private void closeApp(MouseEvent event) {
         System.exit(0);
     }
-    public static void infoBox(String infoMessage, String headerText, String title){
+
+    public static void infoBox(String infoMessage, String headerText, String title) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setContentText(infoMessage);
         alert.setTitle(title);
         alert.setHeaderText(headerText);
         alert.showAndWait();
     }
-
 
 }

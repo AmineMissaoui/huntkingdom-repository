@@ -21,7 +21,7 @@ public class Entreprise extends User{
         
     }
     
-    public Entreprise(String raison_sociale, String matricule_fiscale, String password, String email,String adress, String state, String city, String role, boolean active) {
+    public Entreprise(String raison_sociale, String matricule_fiscale, String password, String email,String adress, String state, String city, String role, int active) {
         super(password,email,adress,state,city,role,active);
         this.raisonSociale = raison_sociale;
         this.matriculeFiscale = matricule_fiscale;

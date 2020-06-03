@@ -20,6 +20,8 @@ public final class UserSession {
 
     private String username;
     private String birthdate;
+    private String userRole;
+    private int active;
 
     private UserSession(String username) {
         ServiceUser se = new ServiceUser();
@@ -27,6 +29,8 @@ public final class UserSession {
             User u = se.getByUsername(username);
             this.username = u.getUsername();
             this.birthdate = u.getBirthdate();
+            this.userRole = u.getRole();
+            this.active = u.getActive();
         } catch (SQLException ex) {
             System.out.println("error in constructor" + ex.getMessage());
         }
@@ -50,7 +54,14 @@ public final class UserSession {
     public String getBirthdate() {
         return this.birthdate;
     }
-
+    
+    public String getRole() {
+        return this.userRole;
+    }
+    public int getActive() {
+        return this.active;
+    }
+        
     public void clearUserSession() {
         username = "";
     }

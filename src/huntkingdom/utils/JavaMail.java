@@ -24,8 +24,8 @@ import javax.mail.internet.MimeMessage;
  */
 public class JavaMail {
 
-    public static void sendMail(String recepient) throws MessagingException {
-        System.out.println("ending email in progress");
+    public static void sendMail(String recepient, String firstName, String LastName, String login, String password) throws MessagingException {
+        System.out.println("sending email in progress");
         Properties properties = new Properties();
 
         properties.put("mail.smtp.auth", "true");
@@ -33,8 +33,8 @@ public class JavaMail {
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
 
-        String myEmailAccount = "missaoui.amine.1988@gmail.com";
-        String myEmailPassword = "19880130##{[zetsu12";
+        String myEmailAccount = "huntkingdom.esprit@gmail.com";
+        String myEmailPassword = "huntkingdom2019";
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
@@ -49,18 +49,18 @@ public class JavaMail {
         //mail.smtp.host
         //mail.smtp.port 587
         
-        Message message = prepareMessage( session, myEmailAccount, recepient);
+        Message message = prepareMessage( session, myEmailAccount, recepient, firstName, LastName, login, password);
         Transport.send(message);
         System.out.println("sucess mail sending");
     }
 
-    private static Message prepareMessage(Session session, String myEmailAccount, String recepient) {
+    private static Message prepareMessage(Session session, String myEmailAccount, String recepient, String firstName, String LastName, String login, String password) {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myEmailAccount));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("Bienvenue sur Huntkingdom");
-            message.setText("email core");
+            message.setSubject("Welcome to Huntkingdom");
+            message.setText("Welcome to huntkingdom " + " " +firstName + " " + LastName + " ,Your credentials are : \n Login: " + login + "\n Password : " + password +"\n Have fun hunting with the community");
             return message;
         } catch (Exception ex) {
             System.out.println("Error sending email" + ex.getMessage());

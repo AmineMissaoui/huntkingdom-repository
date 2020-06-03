@@ -46,37 +46,42 @@ public class HomeFXMLController implements Initializable {
     private JFXButton btnShop;
     @FXML
     private Label labelUserName;
-    
+
     UserSession session;
     @FXML
     private Pane homeCenterPane;
     @FXML
     private Label labelBirthdate;
+    @FXML
+    private Label labelRole;
 
     public HomeFXMLController() {
         session = UserSession.getInstance();
     }
-    
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-            
+
         labelUserName.setText(session.getUsername());
         labelBirthdate.setText(session.getBirthdate());
-                Parent fxml;
+        labelRole.setText(session.getRole());
         try {
-            fxml = FXMLLoader.load(getClass().getResource("AdminValidationFXML.fxml"));
-            homeCenterPane.getChildren().removeAll();
-            homeCenterPane.getChildren().setAll(fxml);
+            if (session.getRole().equals("admin")) {
+                Parent fxml = FXMLLoader.load(getClass().getResource("AdminValidationFXML.fxml"));
+                homeCenterPane.getChildren().removeAll();
+                homeCenterPane.getChildren().setAll(fxml);
+            }else{
+                Parent fxml = FXMLLoader.load(getClass().getResource("UserHomeFXML.fxml"));
+                homeCenterPane.getChildren().removeAll();
+                homeCenterPane.getChildren().setAll(fxml);
+            }
         } catch (IOException ex) {
             System.out.println("error" + ex.getMessage());
         }
 
     }
 
-
-    
 }

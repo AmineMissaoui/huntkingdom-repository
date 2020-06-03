@@ -57,10 +57,18 @@ public class AdminValidationFXMLController implements Initializable {
             graphicUser.getChildren().add(new Label(u.getUsername()));
             graphicUser.getChildren().add(new Label(u.getFirst_name()));
             graphicUser.getChildren().add(new Label(u.getLast_name()));
-            graphicUser.getChildren().add(new JFXToggleButton());
+            JFXToggleButton toogle = new JFXToggleButton();
+            graphicUser.getChildren().add(toogle);
+            toogle.setOnAction((event) -> {
+                if(toogle.isSelected()){
+                    u.setActive(1);
+                }else{
+                    u.setActive(0);
+                }
+            });
             liste.getChildren().add(graphicUser);
         }
-        //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
+        liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
         return liste;
     }
 
@@ -73,7 +81,7 @@ public class AdminValidationFXMLController implements Initializable {
             graphicUser.getChildren().add(new Label(e.getMatricule_fiscale()));
             liste.getChildren().add(graphicUser);
         }
-        //liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
+        liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
         return liste;
     }
 
