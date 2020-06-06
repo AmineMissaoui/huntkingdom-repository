@@ -16,7 +16,7 @@
         <URL value="@homefxml.css" />
     </stylesheets>
    <children>
-      <BorderPane prefHeight="769.0" prefWidth="1036.0">
+      <BorderPane fx:id="panelHome" prefHeight="769.0" prefWidth="1036.0">
          <top>
             <AnchorPane prefHeight="52.0" prefWidth="1027.0" BorderPane.alignment="CENTER">
                <children>
@@ -52,7 +52,8 @@
                   <JFXButton fx:id="btnCalendar" layoutX="-1.0" layoutY="123.0" prefHeight="32.0" prefWidth="200.0" text="CALENDAR" />
                   <JFXButton fx:id="btnEvent" layoutX="-1.0" layoutY="156.0" prefHeight="32.0" prefWidth="200.0" text="EVENT" />
                   <JFXButton fx:id="btnElearning" layoutX="-1.0" layoutY="189.0" prefHeight="32.0" prefWidth="200.0" text="ELEARNING" />
-                  <JFXButton fx:id="btnShop" layoutX="-1.0" layoutY="223.0" prefHeight="32.0" prefWidth="200.0" text="SHOP" />
+                  <JFXButton fx:id="btnGroup" layoutX="-1.0" layoutY="223.0" onAction="#buttonGroup" prefHeight="32.0" prefWidth="200.0" text="GROUP" />
+                  <JFXButton fx:id="btnShop1" layoutX="-1.0" layoutY="255.0" prefHeight="32.0" prefWidth="200.0" text="SHOP" />
                </children>
             </AnchorPane>
          </left>

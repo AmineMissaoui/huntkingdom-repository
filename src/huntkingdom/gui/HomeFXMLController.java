@@ -18,11 +18,14 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -45,11 +48,16 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private JFXButton btnShop;
     @FXML
+    private JFXButton btnGroup;
+    @FXML
     private Label labelUserName;
 
     UserSession session;
     @FXML
     private Pane homeCenterPane;
+    @FXML
+    private BorderPane panelHome;
+    
     @FXML
     private Label labelBirthdate;
     @FXML
@@ -83,5 +91,17 @@ public class HomeFXMLController implements Initializable {
         }
 
     }
+    
+   public void buttonGroup(ActionEvent event ){
+       Pane groupScene = null;
+        try {
+            groupScene = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/AddGroupFXML.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(HomeFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                panelHome.setCenter(groupScene);
+       
+   
+   }
 
 }
