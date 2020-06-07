@@ -6,13 +6,16 @@
 package huntkingdom.services;
 
 import huntkingdom.entities.Group;
+import huntkingdom.utils.JavaFTP;
 import huntkingdom.utils.MyDB;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,21 +25,29 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static jdk.nashorn.tools.ShellFunctions.input;
-
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPReply;
 /**
  *
  * @author Me
  */
 public class GroupService {
         private Connection cnx;
+        private FTPClient ftpC;
+
 
     public GroupService() {
         cnx=MyDB.getInstance().getConnection();
+       // ftpC=JavaFTP.getInstance().getFTPClient();
     }
     
-    
+
     
     public void addGroup(Group g) throws SQLException {
+        FileInputStream fis = null;
+        boolean Store=false;
         
         String request1 = "INSERT INTO `groupe` (`id`,`nom`,`description`,`image`)"
                 + "VALUES (NULL, ?,?,?)";
@@ -45,20 +56,37 @@ public class GroupService {
                 + "VALUES (NULL,`"+g.getNom()+"`,`"+g.getDescription()+"`)";
 
         if(g.getImageFile()!=null){
-            try {
-                        String request3 = "INSERT INTO `groupe` (`nom`,`description`,`image`)"
-                + "VALUES (?,?,?)";
-
-                FileInputStream input = new FileInputStream(g.getImageFile());
-                 PreparedStatement stm = cnx.prepareStatement(request3);
+               // String path = ftpC.printWorkingDirectory();
+                String urlImageFileFTP = "img"+g.getNom()+".jpg";
+                String imageLocalPath=g.getImageFile().getAbsolutePath();
+                try{
+                    
+                    fis= new FileInputStream(g.getImageFile());
+                    
+                    Store=ftpC.storeFile(urlImageFileFTP, fis);
+                    fis.close();
+                    ftpC.logout();
+                    System.out.println(Store);
+                    String request3 = "INSERT INTO `groupe` (`nom`,`description`,`image`)"
+                            + "VALUES (?,?,?)";
+                    
+                    
+                    PreparedStatement stm = cnx.prepareStatement(request3);
                     stm.setString(1, g.getNom());
                     stm.setString(2, g.getDescription());
-                    stm.setBinaryStream(3,input );
+                    stm.setString(3, urlImageFileFTP);
                     stm.executeUpdate();
-            } catch (FileNotFoundException ex) {
-                System.out.println("error no image attached ");;
-            }
-
+                } catch (FileNotFoundException ex) {
+                    System.out.println("error no image attached ");;
+                }
+                catch (IOException ex) {
+                    Logger.getLogger(GroupService.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+                
+                
+            
 
           
         

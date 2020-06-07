@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package huntkingdom.utils;
+import com.cloudinary.Cloudinary;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPReply;
@@ -16,14 +17,20 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+//import com.cloudinary.*;
+import com.cloudinary.utils.ObjectUtils;
 
 /**
  *
  * @author Me
  */
 public class JavaFTP {
-    String url = "ftp://127.0.0.1";
+    Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
+"cloud_name", "dn1smnelu",
+"api_key", "743929825926496",
+"api_secret", "cFdZ3OmxiYiHrDzT3RmggEb4ikE"));
+    
+   /* String url = "ftp.drivehq.com";
     int port = 21;
 
     String login ="huntkingdom";
@@ -38,6 +45,7 @@ public class JavaFTP {
             ftpClient.login(login, password);
             ftpClient.enterLocalPassiveMode();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            System.out.println("Connected to " + url + ".");
         } catch (IOException ex) {
 ex.printStackTrace();        }
 }
@@ -49,6 +57,6 @@ ex.printStackTrace();        }
             instanceClientFTP = new JavaFTP();
         return instanceClientFTP;
     }
- 
+ */
     
 }
