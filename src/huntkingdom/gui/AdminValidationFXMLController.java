@@ -13,6 +13,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -44,13 +46,12 @@ public class AdminValidationFXMLController implements Initializable {
             ArrayList<Entreprise> entreprises = new ServiceUser().getEntreprise();
             homePane.getChildren().add(showUsers(users));
             homePaneEntreprise.getChildren().add(showEntreprises(entreprises));
-            //labelUserName.setText(UserSession.getUsername());
         } catch (SQLException ex) {
             System.out.println("error" + ex.getMessage());
         }
     }
 
-    public VBox showUsers(ArrayList<User> users) {
+    public VBox showUsers(ArrayList<User> users) throws SQLException {
         VBox liste = new VBox();
         for (User u : users) {
             HBox graphicUser = new HBox();
@@ -59,11 +60,23 @@ public class AdminValidationFXMLController implements Initializable {
             graphicUser.getChildren().add(new Label(u.getLast_name()));
             JFXToggleButton toogle = new JFXToggleButton();
             graphicUser.getChildren().add(toogle);
+            ServiceUser su = new ServiceUser();
+            if (su.getCurrentUserState(u) == 1) {
+                toogle.setSelected(true);
+            }
             toogle.setOnAction((event) -> {
-                if(toogle.isSelected()){
-                    u.setActive(1);
-                }else{
-                    u.setActive(0);
+                try {
+                    if (toogle.isSelected()) {
+                        u.setActive(1);
+                        System.out.println("user is now active " + u.getActive() + "For id : " + u.getId());
+                        su.updateUserState(u);
+                    } else {
+                        u.setActive(0);
+                        System.out.println("user is now inactive " + u.getActive() + "For id : " + u.getId());
+                        su.updateUserState(u);
+                    }
+                } catch (SQLException ex) {
+                    System.out.println("error updating state" + ex.getMessage());
                 }
             });
             liste.getChildren().add(graphicUser);
