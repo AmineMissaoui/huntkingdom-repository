@@ -111,13 +111,27 @@ public class ServiceUser implements IServiceUser{
         pst.setString(1, u.getFirst_name());
         pst.setString(2, u.getLast_name());
         pst.setInt(3, u.getId());
+        pst.executeUpdate();
     }
     
     public void updateUserState(User u) throws SQLException {
         String request = "UPDATE `users` SET `users_active` = ? WHERE users_id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
+        System.out.println(u.getId());
         pst.setInt(1, u.getActive());
         pst.setInt(2, u.getId());
+        System.out.println(pst);
+        pst.executeUpdate();
+    }
+    
+    public int getCurrentUserState(User u) throws SQLException{
+        String request = "SELECT `users_active` FROM `users` WHERE users_id=" + u.getId();
+        Statement stm = cnx.createStatement();
+        ResultSet rst = stm.executeQuery(request);
+        rst.next();
+        int state = rst.getInt("users_active");
+        System.out.println(state);
+        return state;
     }
     
     public void deleteUser(User u) throws SQLException{

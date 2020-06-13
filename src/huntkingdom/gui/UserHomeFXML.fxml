@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.net.URL?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="824.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.UserHomeFXMLController">
@@ -9,6 +15,24 @@
         <URL value="@userhomefxml.css" />
     </stylesheets>
    <children>
-      <Text layoutX="132.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="News feed" />
+      <Text layoutX="26.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Share something">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Text>
+      <JFXTextArea fx:id="taPostDescription" layoutX="23.0" layoutY="119.0" prefHeight="114.0" prefWidth="775.0" text="   What's on your mind" />
+      <JFXTextField fx:id="tfPostTitle" layoutX="23.0" layoutY="79.0" prefHeight="25.0" prefWidth="775.0" text="   Post title" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f5" height="392.0" layoutX="23.0" layoutY="298.0" stroke="#d0d0d0" strokeType="INSIDE" width="775.0" />
+      <Text layoutX="42.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feed">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <FontAwesomeIcon glyphName="PAPERCLIP" layoutX="105.0" layoutY="277.0" size="2em" />
+      <JFXButton fx:id="btnShare" layoutX="686.0" layoutY="255.0" prefHeight="27.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="SHARE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <FontAwesomeIcon glyphName="CAMERA" layoutX="66.0" layoutY="277.0" size="2em" />
+      <FontAwesomeIcon glyphName="IMAGE" layoutX="23.0" layoutY="277.0" size="2em" />
    </children>
 </AnchorPane>
