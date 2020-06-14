@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.AddGroupController">
+   <children>
+      <BorderPane fx:id="bpAddGroup" prefHeight="400.0" prefWidth="600.0">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="83.0" layoutY="62.0" prefHeight="17.0" prefWidth="60.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="83.0" layoutY="118.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="257.0" text="Image">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnAddImage" layoutX="281.0" layoutY="282.0" onAction="#onAddImage" text="Add" />
+                  <JFXTextField fx:id="tfImage" layoutX="179.0" layoutY="242.0" />
+                  <JFXTextField fx:id="tfName" layoutX="179.0" layoutY="60.0" />
+                  <JFXTextArea fx:id="taDescription" layoutX="179.0" layoutY="107.0" prefHeight="107.0" prefWidth="136.0" />
+                  <JFXButton fx:id="btnCreateGroup" layoutX="357.0" layoutY="348.0" onAction="#createGroupAction" text="Create">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIcon glyphName="IMAGE" layoutX="143.0" layoutY="271.0" size="2em">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

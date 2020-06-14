@@ -38,45 +38,23 @@ public class GroupService {
     
     public void addGroup(Group g) throws SQLException {
         
-        String request1 = "INSERT INTO `groupe` (`id`,`nom`,`description`,`image`)"
-                + "VALUES (NULL, ?,?,?)";
         
                String request2 = "INSERT INTO `groupe` (`id`,`nom`,`description`)"
-                + "VALUES (NULL,`"+g.getNom()+"`,`"+g.getDescription()+"`)";
+                + "VALUES (NULL,?,?)";
 
-        if(g.getImageFile()!=null){
-            try {
-                        String request3 = "INSERT INTO `groupe` (`nom`,`description`,`image`)"
-                + "VALUES (?,?,?)";
-
-                FileInputStream input = new FileInputStream(g.getImageFile());
-                 PreparedStatement stm = cnx.prepareStatement(request3);
-                    stm.setString(1, g.getNom());
-                    stm.setString(2, g.getDescription());
-                    stm.setBinaryStream(3,input );
-                    stm.executeUpdate();
-            } catch (FileNotFoundException ex) {
-                System.out.println("error no image attached ");;
-            }
-
-
-          
-        
-        }
-       else     {    
+         
                              PreparedStatement stm = cnx.prepareStatement(request2);
                     stm.setString(1, g.getNom());
                     stm.setString(2, g.getDescription());
 
             stm.executeUpdate();
-        }
+        
         
         }
 
     public ArrayList<Group> getGroups() throws SQLException{
         ArrayList<Group> results = new ArrayList<>();
-            try {
-                   String query = "SELECT * FROM `groupe`";
+        String query = "SELECT * FROM `groupe`";
         Statement stm = cnx.createStatement();
         ResultSet rst= stm.executeQuery(query);
         int i=0;
@@ -84,29 +62,13 @@ public class GroupService {
 
             Group g = new Group();
             g.setId(rst.getInt("id"));
-            g.setNom(rst.getString(2));
-            g.setDescription(rst.getString(3));
-if(rst.getBinaryStream("image")!=null){
-
-            File imgFile=new File("temp"+i+".jpg");
-            i++;
-            FileOutputStream output = new FileOutputStream(imgFile);
-
-            InputStream input = rst.getBinaryStream("image");
-            byte[] buffer=new byte[600];
-         
-                while(input.read(buffer)>0){
-                    output.write(buffer);
-                    
-                }
-                g.setImageFile(imgFile);}
-else g.setImageFile(null);
-                         results.add(g);
-
+            g.setNom(rst.getString("nom"));
+            g.setDescription(rst.getString("description"));
+            
+            
+            results.add(g);
+            
         }
-            } catch (IOException ex) {
-                System.out.println("erreur d'affichage service group");;
-            }
         return results; 
     }
     
