@@ -9,8 +9,10 @@ import huntkingdom.entities.Publication;
 import huntkingdom.interfaces.IServicePublication;
 import huntkingdom.utils.MyDB;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -32,4 +34,18 @@ public class ServicePublication implements IServicePublication{
         stm.executeUpdate(query);
     }
     
+    public ArrayList<Publication> getPublications() throws SQLException{
+        ArrayList<Publication> publications = new ArrayList<>();
+        String query = "SELECT * FROM `publication`";
+        Statement stm = cnx.createStatement();
+        ResultSet rst = stm.executeQuery(query);
+        while(rst.next()){
+            Publication pub = new Publication();
+            pub.setId(rst.getInt(1));
+            pub.setTitle(rst.getString(2));
+            pub.setContent(rst.getString(3));
+            pub.setDescription(rst.getString(4));
+        }
+        return publications;
+    }
 }

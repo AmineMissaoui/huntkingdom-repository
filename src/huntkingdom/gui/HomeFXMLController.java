@@ -46,8 +46,6 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private JFXButton btnElearning;
     @FXML
-    private JFXButton btnShop;
-    @FXML
     private JFXButton btnGroup;
     @FXML
     private Label labelUserName;
@@ -62,6 +60,10 @@ public class HomeFXMLController implements Initializable {
     private Label labelBirthdate;
     @FXML
     private Label labelRole;
+    @FXML
+    private JFXButton btnShop1;
+    @FXML
+    private Pane homeRightPane;
 
     public HomeFXMLController() {
         session = UserSession.getInstance();
@@ -85,6 +87,10 @@ public class HomeFXMLController implements Initializable {
                 Parent fxml = FXMLLoader.load(getClass().getResource("UserHomeFXML.fxml"));
                 homeCenterPane.getChildren().removeAll();
                 homeCenterPane.getChildren().setAll(fxml);
+                Parent fxmlRight = FXMLLoader.load(getClass().getResource("UserHomeCalendarFXML.fxml"));
+                homeRightPane.getChildren().removeAll();
+                homeRightPane.getChildren().setAll(fxmlRight);
+                
             }
         } catch (IOException ex) {
             System.out.println("error" + ex.getMessage());
@@ -92,6 +98,7 @@ public class HomeFXMLController implements Initializable {
 
     }
     
+    @FXML
    public void buttonGroup(ActionEvent event ){
        Pane groupScene = null;
         try {

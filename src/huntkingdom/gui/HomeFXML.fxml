@@ -60,10 +60,17 @@
          <center>
             <AnchorPane prefHeight="716.0" prefWidth="837.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="homeCenterPane" layoutX="10.0" layoutY="6.0" />
+                  <Pane fx:id="homeCenterPane" />
                </children>
             </AnchorPane>
          </center>
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="homeRightPane" prefHeight="716.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
