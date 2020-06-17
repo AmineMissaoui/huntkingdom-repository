@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.UserHomeCalendarFXMLController">
+    <stylesheets>
+        <URL value="@userhomecalendarfxml.css" />
+    </stylesheets>
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="701.0" layoutX="9.0" layoutY="55.0" stroke="#d0d0d0" strokeType="INSIDE" width="182.0" />
+      <Text fill="#51b97e" layoutX="42.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My caledar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <FontAwesomeIcon fill="#51b97e" glyphName="CALENDAR" layoutX="16.0" layoutY="42.0" size="1.5em" />
+   </children>
+</AnchorPane>
