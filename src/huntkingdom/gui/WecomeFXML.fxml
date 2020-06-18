@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.WecomeFXMLController">
     <stylesheets>
         <URL value="@wecomefxml.css" />
     </stylesheets>
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="768.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="344.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0594c1" height="768.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="344.0" />
       <Pane fx:id="welcomePane" layoutX="344.0" prefHeight="768.0" prefWidth="680.0" />
+      <ImageView fitHeight="174.0" fitWidth="174.0" layoutX="85.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/img/hk.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="47.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nunc non elementum augue. Maecenas pellentesque, orci at egestas pretium, lacus enim consectetur enim, ac rutrum justo mauris eu purus. Donec efficitur feugiat leo, faucibus pulvinar mauris tincidunt semper. Cras sit amet sollicitudin nunc, ut tempus leo. " textAlignment="CENTER" wrappingWidth="250.0">
+         <font>
+            <Font name="Open Sans Regular" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="152.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HUNTKINGDOM">
+         <font>
+            <Font name="Open Sans Bold" size="18.0" />
+         </font>
+      </Text>
+      <Line endX="27.0" layoutX="208.0" layoutY="289.0" startX="-100.0" stroke="WHITE" />
+      <ImageView fitHeight="289.0" fitWidth="344.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/img/bg-home.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="47.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to">
+         <font>
+            <Font name="Open Sans Regular" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

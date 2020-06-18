@@ -45,6 +45,8 @@ public class UserHomeFXMLController implements Initializable {
             Publication pub = new Publication();
             pub.setTitle(tfPostTitle.getText());
             pub.setDescription(taPostDescription.getText());
+            tfPostTitle.setText("");
+            taPostDescription.setText("");
             try {
                 Servicepub.addPublication(pub);
             } catch (SQLException ex) {

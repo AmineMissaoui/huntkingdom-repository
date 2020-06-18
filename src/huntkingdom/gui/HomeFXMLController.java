@@ -55,11 +55,6 @@ public class HomeFXMLController implements Initializable {
     private Pane homeCenterPane;
     @FXML
     private BorderPane panelHome;
-    
-    @FXML
-    private Label labelBirthdate;
-    @FXML
-    private Label labelRole;
     @FXML
     private JFXButton btnShop1;
     @FXML
@@ -76,8 +71,6 @@ public class HomeFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         labelUserName.setText(session.getUsername());
-        labelBirthdate.setText(session.getBirthdate());
-        labelRole.setText(session.getRole());
         try {
             if (session.getRole().equals("admin")) {
                 Parent fxml = FXMLLoader.load(getClass().getResource("AdminValidationFXML.fxml"));
@@ -110,5 +103,11 @@ public class HomeFXMLController implements Initializable {
        
    
    }
+
+    @FXML
+    private void buttonHome(ActionEvent event) throws IOException {
+        Pane homeScene = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/UserHomeFXML.fxml"));
+        panelHome.setCenter(homeScene);
+    }
 
 }

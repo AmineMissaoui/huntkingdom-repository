@@ -20,8 +20,8 @@
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Text>
-      <JFXTextArea fx:id="taPostDescription" layoutX="38.0" layoutY="114.0" prefHeight="88.0" prefWidth="562.0" text="   What's on your mind" />
-      <JFXTextField fx:id="tfPostTitle" layoutX="36.0" layoutY="73.0" prefHeight="25.0" prefWidth="562.0" text="   Post title" />
+      <JFXTextArea fx:id="taPostDescription" layoutX="38.0" layoutY="114.0" prefHeight="88.0" prefWidth="562.0" promptText="   What's on your mind" />
+      <JFXTextField fx:id="tfPostTitle" layoutX="36.0" layoutY="73.0" prefHeight="25.0" prefWidth="562.0" promptText="   Post title" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="392.0" layoutX="23.0" layoutY="283.0" stroke="#d0d0d0" strokeType="INSIDE" width="591.0" />
       <Text fill="#51b97e" layoutX="38.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feed">
          <font>
