@@ -90,7 +90,7 @@
             <JFXTextField fx:id="tfCity" layoutX="361.0" layoutY="516.0" prefHeight="25.0" prefWidth="131.0" />
             <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="270.0" prefHeight="25.0" prefWidth="296.0" />
             <JFXComboBox fx:id="cbState" layoutX="195.0" layoutY="516.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
-            <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="570.4285717010498" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Register" textFill="WHITE">
+            <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="570.4285717010498" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #0594c1;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

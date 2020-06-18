@@ -4,10 +4,12 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -18,30 +20,39 @@
    <children>
       <Pane fx:id="contentArea" prefHeight="768.0" prefWidth="680.0">
          <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="768.0" layoutX="1.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="680.0">
+               <styleClass>
+                  <String fx:value="border-radius" />
+                  <String fx:value="mainFxmlClass" />
+               </styleClass>
+            </Rectangle>
+            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="339.0" prefHeight="25.0" prefWidth="296.0" />
             <Label layoutX="195.0" layoutY="203.0" text="LOGIN">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="Open Sans Bold" size="24.0" />
                </font>
             </Label>
             <Label layoutX="195.0" layoutY="267.0" text="Username">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Open Sans Bold" size="12.0" />
                </font>
             </Label>
             <Label layoutX="195.0" layoutY="322.0" text="Password">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Open Sans Bold" size="12.0" />
                </font>
             </Label>
             <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="282.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXButton fx:id="btnLogin" layoutX="195.0" layoutY="384.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #1e90ff;" text="Login" textFill="WHITE">
+            <JFXButton fx:id="btnLogin" layoutX="195.0" layoutY="384.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #0594c1;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
             <FontAwesomeIcon glyphName="CLOSE" layoutX="650.0" layoutY="30.0" onMouseClicked="#closeApp" size="1.5em" />
-            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="339.0" prefHeight="25.0" prefWidth="296.0" />
-            <Text fill="DODGERBLUE" layoutX="195.0" layoutY="462.0" onMouseClicked="#openRegestration" strokeType="OUTSIDE" strokeWidth="0.0" text="Register" />
+            <Text fill="#51b97e" layoutX="195.0" layoutY="462.0" onMouseClicked="#openRegestration" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font></Text>
          </children>
       </Pane>
    </children>
