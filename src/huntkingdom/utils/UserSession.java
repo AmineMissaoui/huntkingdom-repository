@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package huntkingdom.entities;
+package huntkingdom.utils;
 
+import huntkingdom.entities.User;
 import huntkingdom.services.ServiceUser;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -21,6 +22,7 @@ public final class UserSession {
     private String username;
     private String birthdate;
     private String userRole;
+    private int id;
     private int active;
 
     private UserSession(String username) {
@@ -30,6 +32,7 @@ public final class UserSession {
             this.username = u.getUsername();
             this.birthdate = u.getBirthdate();
             this.userRole = u.getRole();
+            this.id=u.getId();
             this.active = u.getActive();
         } catch (SQLException ex) {
             System.out.println("error in constructor" + ex.getMessage());
@@ -69,5 +72,12 @@ public final class UserSession {
     @Override
     public String toString() {
         return "UserSession{" + "username=" + username + '}';
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
 }

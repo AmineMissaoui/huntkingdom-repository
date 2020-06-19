@@ -8,7 +8,7 @@ package huntkingdom.gui;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import huntkingdom.entities.UserSession;
+import huntkingdom.utils.UserSession;
 import huntkingdom.services.ServiceUser;
 import huntkingdom.utils.MyDB;
 import java.io.IOException;
