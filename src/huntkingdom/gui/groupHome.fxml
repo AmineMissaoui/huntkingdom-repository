@@ -6,7 +6,7 @@
 
 <BorderPane fx:id="paneHomeGroupe" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.GroupHomeController">
    <center>
-      <AnchorPane prefHeight="800.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="800.0" prefWidth="500.0" style="-fx-border-color: #179C10;" BorderPane.alignment="CENTER">
          <children>
             <JFXButton fx:id="btnAddGroup" layoutX="320.0" layoutY="14.0" onAction="#OnAddGroup" text="Add Group" />
          </children>
