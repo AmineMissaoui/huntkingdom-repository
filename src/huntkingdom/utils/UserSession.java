@@ -22,6 +22,7 @@ public final class UserSession {
     private String username;
     private String birthdate;
     private String userRole;
+
     private int id;
     private int active;
 
@@ -73,7 +74,6 @@ public final class UserSession {
     public String toString() {
         return "UserSession{" + "username=" + username + '}';
     }
-
     /**
      * @return the id
      */

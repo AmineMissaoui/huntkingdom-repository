@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="824.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.AdminValidationFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="637.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.AdminValidationFXMLController">
     <stylesheets>
         <URL value="@adminvalidationfxml.css" />
     </stylesheets>
    <children>
-      <JFXTabPane layoutX="-2.0" layoutY="-2.0" prefWidth="837.0">
+      <JFXTabPane layoutX="8.0" layoutY="7.0" prefHeight="759.0" prefWidth="602.0">
          <tabs>
             <Tab text="Members">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
                      <children>
-                        <Pane fx:id="homePane" prefHeight="180.0" prefWidth="837.0" />
+                        <Pane fx:id="homePane" layoutX="23.0" layoutY="120.0" prefHeight="562.0" prefWidth="580.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="562.0" stroke="#d0d0d0" strokeType="INSIDE" width="579.0" />
+                           </children></Pane>
+                        <Text layoutX="23.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members validation">
+                           <font>
+                              <Font name="Open Sans Bold" size="19.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="23.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search for a member">
+                           <font>
+                              <Font name="Open Sans Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField layoutX="23.0" layoutY="78.0" prefHeight="25.0" prefWidth="347.0" />
+                        <FontAwesomeIcon glyphName="SEARCH" layoutX="350.0" layoutY="95.0" />
+                        <JFXButton layoutX="435.0" layoutY="78.0" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: #0594c1;" text="SEARCH" textFill="WHITE">
+                           <font>
+                              <Font name="Open Sans Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
                      </children>
                   </AnchorPane>
                </content>
@@ -26,7 +52,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
                      <children>
-                        <Pane fx:id="homePaneEntreprise" prefHeight="180.0" prefWidth="837.0" />
+                        <Pane fx:id="homePaneEntreprise" prefHeight="732.0" prefWidth="837.0" />
                      </children>
                   </AnchorPane>
                </content>

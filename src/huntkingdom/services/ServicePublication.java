@@ -45,6 +45,7 @@ public class ServicePublication implements IServicePublication{
             pub.setTitle(rst.getString(2));
             pub.setContent(rst.getString(3));
             pub.setDescription(rst.getString(4));
+            publications.add(pub);
         }
         return publications;
     }

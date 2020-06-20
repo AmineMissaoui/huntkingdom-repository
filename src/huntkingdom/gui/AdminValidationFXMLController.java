@@ -5,6 +5,7 @@
  */
 package huntkingdom.gui;
 
+import com.jfoenix.controls.JFXScrollPane;
 import com.jfoenix.controls.JFXToggleButton;
 import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
@@ -17,7 +18,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -30,9 +34,10 @@ import javafx.scene.layout.VBox;
 public class AdminValidationFXMLController implements Initializable {
 
     @FXML
-    private Pane homePane;
-    @FXML
     private Pane homePaneEntreprise;
+    @FXML
+    private Pane homePane;
+    
 
     /**
      * Initializes the controller class.
@@ -51,15 +56,20 @@ public class AdminValidationFXMLController implements Initializable {
         }
     }
 
-    public VBox showUsers(ArrayList<User> users) throws SQLException {
+    public ScrollPane showUsers(ArrayList<User> users) throws SQLException {
         VBox liste = new VBox();
         for (User u : users) {
             HBox graphicUser = new HBox();
-            graphicUser.getChildren().add(new Label(u.getUsername()));
-            graphicUser.getChildren().add(new Label(u.getFirst_name()));
-            graphicUser.getChildren().add(new Label(u.getLast_name()));
+            Label LabelFirstname = new Label(u.getFirst_name());
+            LabelFirstname.setPadding(new Insets(5, 5, 5, 5));
+            graphicUser.getChildren().add(LabelFirstname);
+            Label labelLastName = new Label(u.getLast_name());
+            labelLastName.setPadding(new Insets(5, 5, 5, 5));
+            graphicUser.getChildren().add(labelLastName);
             JFXToggleButton toogle = new JFXToggleButton();
             graphicUser.getChildren().add(toogle);
+            graphicUser.setPadding(new Insets(0, 0, 0, 0));
+            graphicUser.setAlignment(Pos.BASELINE_LEFT);
             ServiceUser su = new ServiceUser();
             if (su.getCurrentUserState(u) == 1) {
                 toogle.setSelected(true);
@@ -81,8 +91,13 @@ public class AdminValidationFXMLController implements Initializable {
             });
             liste.getChildren().add(graphicUser);
         }
-        liste.prefHeightProperty().bind(homePane.heightProperty().multiply(0.5));
-        return liste;
+        liste.setPadding(new Insets(10, 10, 10, 10));
+        ScrollPane scroll = new ScrollPane();
+        //scroll.setBackground();
+        scroll.setContent(liste); 
+        liste.prefHeightProperty().bind(homePane.heightProperty().multiply(1));
+        liste.prefWidthProperty().bind(homePane.widthProperty().multiply(1));
+        return scroll;
     }
 
     public VBox showEntreprises(ArrayList<Entreprise> entreprises) {

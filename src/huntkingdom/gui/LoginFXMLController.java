@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import huntkingdom.utils.UserSession;
 import huntkingdom.services.ServiceUser;
+import huntkingdom.utils.JavaModals;
 import huntkingdom.utils.MyDB;
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +26,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -45,41 +47,48 @@ public class LoginFXMLController implements Initializable {
     @FXML
     private Pane contentArea;
     Connection cnx;
+    @FXML
+    private Label usernameWarning;
+    @FXML
+    private Label passwordWarning;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        usernameWarning.setVisible(false);
+        passwordWarning.setVisible(false);
         btnLogin.setOnAction((event) -> {
             try {
                 String username = tfUsername.getText();
                 String password = tfPassword.getText();
                 if (username.isEmpty()) {
-                    infoBox("Please enter your email", null, "WARNIG");
+                    //JavaModals.ErrorBox("Please enter your email", null, "ERROR");
+                    usernameWarning.setVisible(true);
                     System.out.println("email empty");
-                }
-                if (password.isEmpty()) {
-                    infoBox("Please enter your password", null, "WARNIG");
+                }else if (password.isEmpty()) {
+                    //JavaModals.ErrorBox("Please enter your password", null, "ERROR");
+                    passwordWarning.setVisible(true);
                     System.out.println("password empty");
                 } else {
 
                     ServiceUser se = new ServiceUser();
                     boolean flag = se.validateCredentials(username, password);
                     if (!flag) {
-                        infoBox("Wrong credentials", null, "ERROR");
+                        JavaModals.ErrorBox("Wrong credentials", null, "ERROR");
                         System.out.println("wrong credentials");
                     } else {
                         UserSession.setInstance(username);
                         if (UserSession.getInstance().getActive() == 1) {
-                            infoBox("welcome", null, "sccess");
+                            JavaModals.infoBox("welcome", null, "sccess");
                             Stage stage = (Stage) btnLogin.getScene().getWindow();
                             Parent newParent = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
                             Scene newScene = new Scene(newParent);
                             stage.setScene(newScene);
                             stage.show();
                         } else {
-                            infoBox("Account disabled Please contact Administrator", null, "ERROR");
+                            JavaModals.infoBox("Account disabled Please contact Administrator", null, "WARNING");
                         }
                     }
                 }
@@ -103,12 +112,6 @@ public class LoginFXMLController implements Initializable {
         System.exit(0);
     }
 
-    public static void infoBox(String infoMessage, String headerText, String title) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText(infoMessage);
-        alert.setTitle(title);
-        alert.setHeaderText(headerText);
-        alert.showAndWait();
-    }
+
 
 }
