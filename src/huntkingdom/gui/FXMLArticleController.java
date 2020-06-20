@@ -191,7 +191,7 @@ public class FXMLArticleController implements Initializable {
                  Parent root;
             try {
                 
-                 root=FXMLLoader.load(getClass().getClassLoader().getResource("gui/FXMLArticle.fxml"));
+                 root=FXMLLoader.load(getClass().getClassLoader().getResource("huntkingdom/gui/FXMLArticle.fxml"));
                  btn_delete.getScene().setRoot(root);
             }
 
@@ -381,7 +381,7 @@ if (newValue == null || newValue.isEmpty()) {
            Parent root;
        try {
                 
-                 root=FXMLLoader.load(getClass().getClassLoader().getResource("gui/FXMLArticle.fxml"));
+                 root=FXMLLoader.load(getClass().getClassLoader().getResource("huntkingdom/gui/FXMLArticle.fxml"));
                  btn_delete.getScene().setRoot(root);
             }
 
@@ -410,8 +410,7 @@ if (newValue == null || newValue.isEmpty()) {
             					// TODO Auto-generated catch block
             					e.printStackTrace();
             				} catch (SQLException ex) {
-                                    Logger.getLogger(huntkingdom.gui.AccueilFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-                                }
+                    System.out.println("erreur pdf");                                }
                 
             }
         });
