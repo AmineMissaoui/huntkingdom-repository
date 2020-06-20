@@ -26,6 +26,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -64,6 +65,16 @@ public class RegisterEntrepriseFXMLController implements Initializable {
     private JFXButton btnRegister;
     @FXML
     private Pane contentArea;
+    @FXML
+    private Label usernameWarning;
+    @FXML
+    private Label passwordWarning;
+    @FXML
+    private Label enWarning;
+    @FXML
+    private Label trnWarning;
+    @FXML
+    private Label emailWarning;
 
     /**
      * Initializes the controller class.
@@ -71,13 +82,38 @@ public class RegisterEntrepriseFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cbState.setItems(list);
+        usernameWarning.setVisible(false);
+        passwordWarning.setVisible(false);
+        enWarning.setVisible(false);
+        trnWarning.setVisible(false);
+        emailWarning.setVisible(false);
         btnRegister.setOnAction((event) -> {
             Entreprise e = new Entreprise();
-            e.setUsername(tfUsername.getText());
-            e.setPassword(tfPassword.getText());
-            e.setEmail(tfEmail.getText());
-            e.setRaisonSociale(tfEntrepriseName.getText());
-            e.setMatriculeFiscale(tfTaxNumber.getText());
+            if(tfUsername.getText().equals("")){
+                usernameWarning.setVisible(true);
+            }else{
+                e.setUsername(tfUsername.getText());
+            }
+            if(tfPassword.getText().equals("")){
+                passwordWarning.setVisible(true);
+            }else{
+               e.setPassword(tfPassword.getText());
+            }
+            if(tfEmail.getText().equals("")){
+                emailWarning.setVisible(true);
+            }else{
+                e.setEmail(tfEmail.getText());
+            }
+            if(tfEntrepriseName.getText().equals("")){
+                enWarning.setVisible(true);
+            }else{
+                e.setRaisonSociale(tfEntrepriseName.getText());
+            }
+            if(tfTaxNumber.getText().equals("")){
+                trnWarning.setVisible(true);
+            }else{
+                e.setMatriculeFiscale(tfTaxNumber.getText());
+            }
             e.setAdress(tfAdress.getText());
             e.setState(cbState.getValue());
             e.setCity(tfCity.getText());

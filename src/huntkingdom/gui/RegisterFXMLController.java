@@ -14,6 +14,7 @@ import com.jfoenix.controls.JFXTextField;
 import huntkingdom.entities.User;
 import huntkingdom.services.ServiceUser;
 import huntkingdom.utils.JavaMail;
+import huntkingdom.utils.JavaModals;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +32,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -73,21 +75,63 @@ public class RegisterFXMLController implements Initializable {
     ObservableList<String> list = FXCollections.observableArrayList("Tunis", "Ben Arouss");
     @FXML
     private Pane contentArea;
+    @FXML
+    private Label usernameWarning;
+    @FXML
+    private Label passwordWarning;
+    @FXML
+    private Label firstNameWarning;
+    @FXML
+    private Label lastNameWarnig;
+    @FXML
+    private Label emailWarning;
+    @FXML
+    private Label birthdateWarning;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        usernameWarning.setVisible(false);
+        passwordWarning.setVisible(false);
+        firstNameWarning.setVisible(false);
+        lastNameWarnig.setVisible(false);
+        emailWarning.setVisible(false);
+        birthdateWarning.setVisible(false);
         cbState.setItems(list);
         btnRegister.setOnAction((event) -> {
             User u = new User();
-            u.setUsername(tfUsername.getText());
-            u.setPassword(tfPassword.getText());
-            u.setFirst_name(tfFirstName.getText());
-            u.setLast_name(tfLastname.getText());
-            u.setEmail(tfEmail.getText());
-            u.setBirthdate(dpBirthdate.getValue().toString());
+            if(tfUsername.getText().equals("")){
+                usernameWarning.setVisible(true);
+            }else{
+                u.setUsername(tfUsername.getText());
+            }
+            if(tfPassword.getText().equals("")){
+                passwordWarning.setVisible(true);
+            }else{
+                u.setPassword(tfPassword.getText());
+            }
+            if(tfFirstName.getText().equals("")){
+                firstNameWarning.setVisible(true);
+            }else{
+                u.setFirst_name(tfFirstName.getText());
+            }
+            if(tfLastname.getText().equals("")){
+                lastNameWarnig.setVisible(true);
+            }else{
+                u.setLast_name(tfLastname.getText());
+            }
+            if(tfEmail.getText().equals("")){
+                emailWarning.setVisible(true);
+            }else{
+                u.setEmail(tfEmail.getText());
+            }
+            if(dpBirthdate.getValue().toString().equals("")){
+                birthdateWarning.setVisible(true);
+            }else{
+                u.setBirthdate(dpBirthdate.getValue().toString());
+            }
             u.setAdress(tfAdress.getText());
             u.setState(cbState.getValue());
             u.setCity(tfCity.getText());
@@ -116,7 +160,8 @@ public class RegisterFXMLController implements Initializable {
                 tfCity.setText("");
                 
             } catch (SQLException ex) {
-                System.out.println("Error" + ex.getMessage());
+                JavaModals.ErrorBox("This username is not available", null, "Error");
+                System.out.println("Error" + ex.getSQLState());
             }
 
         });

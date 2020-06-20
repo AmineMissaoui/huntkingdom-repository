@@ -9,7 +9,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXToggleButton;
 import huntkingdom.entities.Entreprise;
 import huntkingdom.entities.User;
-import huntkingdom.entities.UserSession;
+import huntkingdom.utils.UserSession;
 import huntkingdom.services.ServiceUser;
 import java.io.IOException;
 import java.net.URL;

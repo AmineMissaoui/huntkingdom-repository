@@ -43,16 +43,31 @@
                </font>
             </Label>
             <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="282.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXButton fx:id="btnLogin" layoutX="195.0" layoutY="384.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #0594c1;" text="Login" textFill="WHITE">
+            <JFXButton fx:id="btnLogin" layoutX="195.0" layoutY="393.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #0594c1;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <FontAwesomeIcon glyphName="CLOSE" layoutX="650.0" layoutY="30.0" onMouseClicked="#closeApp" size="1.5em" />
-            <Text fill="#51b97e" layoutX="195.0" layoutY="462.0" onMouseClicked="#openRegestration" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
+            <FontAwesomeIcon fill="#51b97e" glyphName="CLOSE" layoutX="650.0" layoutY="30.0" onMouseClicked="#closeApp" size="1.5em" />
+            <Text fill="#51b97e" layoutX="195.0" layoutY="471.0" onMouseClicked="#openRegestration" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
                <font>
                   <Font name="Open Sans Regular" size="12.0" />
                </font></Text>
+            <Label fx:id="usernameWarning" layoutX="194.0" layoutY="308.0" text="Username must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordWarning" layoutX="194.0" layoutY="366.0" text="Password must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Text fill="#51b97e" layoutX="392.0" layoutY="471.0" onMouseClicked="#openRegestration" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </children>

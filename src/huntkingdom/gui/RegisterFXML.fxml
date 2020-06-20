@@ -12,7 +12,9 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="680.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.RegisterFXMLController">
     <stylesheets>
@@ -21,37 +23,38 @@
    <children>
       <Pane fx:id="contentArea" layoutX="-2.0" prefHeight="768.0" prefWidth="680.0">
          <children>
-            <Label layoutX="195.0" layoutY="80.0" text="REGISTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="768.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="680.0" />
+            <Label layoutX="195.0" layoutY="80.0" text="User registration">
                <font>
-                  <Font name="Open Sans Bold" size="26.0" />
+                  <Font name="Open Sans Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="403.0" text="Email">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="195.0" layoutY="502.0" text="Adress">
+            <Label layoutX="195.0" layoutY="411.0" text="Email">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="205.0" text="Username">
+            <Label layoutX="195.0" layoutY="518.0" text="Adress">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="304.0" text="First name">
+            <Label layoutX="195.0" layoutY="202.0" text="Username">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="352.0" text="Last name">
+            <Label layoutX="195.0" layoutY="305.0" text="First name">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="255.0" text="Password">
+            <Label layoutX="195.0" layoutY="359.0" text="Last name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="253.0" text="Password">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -61,43 +64,103 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="195.0" layoutY="451.0" text="Birthdate">
+            <Label layoutX="195.0" layoutY="462.0" text="Birthdate">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="dpBirthdate" layoutX="195.0" layoutY="464.0" prefHeight="28.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="219.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfFirstName" layoutX="195.0" layoutY="318.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfLastname" layoutX="195.0" layoutY="367.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfEmail" layoutX="195.0" layoutY="417.0" prefHeight="25.0" prefWidth="296.0" />
-            <JFXTextField fx:id="tfAdress" layoutX="195.0" layoutY="516.0" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="195.0" layoutY="550.0" text="State">
+            <JFXDatePicker fx:id="dpBirthdate" layoutX="195.0" layoutY="476.0" prefHeight="28.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfUsername" layoutX="195.0" layoutY="216.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfFirstName" layoutX="195.0" layoutY="320.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfLastname" layoutX="195.0" layoutY="373.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfEmail" layoutX="195.0" layoutY="424.0" prefHeight="25.0" prefWidth="296.0" />
+            <JFXTextField fx:id="tfAdress" layoutX="195.0" layoutY="532.0" prefHeight="25.0" prefWidth="296.0" />
+            <Label layoutX="195.0" layoutY="569.0" text="State">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="361.0" layoutY="550.0" text="City">
+            <Label layoutX="361.0" layoutY="569.0" text="City">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="564.0" prefHeight="25.0" prefWidth="131.0" />
+            <JFXTextField fx:id="tfCity" layoutX="360.0" layoutY="583.0" prefHeight="25.0" prefWidth="131.0" />
             <JFXRadioButton fx:id="rbMemeber" layoutX="195.0" layoutY="166.0" selected="true" text="A hobbyist">
                <toggleGroup>
                   <ToggleGroup fx:id="user_role" />
                </toggleGroup>
             </JFXRadioButton>
             <JFXRadioButton fx:id="rbEntreprise" layoutX="312.0" layoutY="166.0" onAction="#selectRadio" text="An entreprise" toggleGroup="$user_role" />
-            <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="620.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #0594c1;" text="Register" textFill="WHITE">
+            <JFXButton fx:id="btnRegister" layoutX="195.0" layoutY="631.0" prefHeight="46.0" prefWidth="296.0" style="-fx-background-color: #0594c1;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="270.0" prefHeight="25.0" prefWidth="296.0" />
-            <FontAwesomeIcon glyphName="CLOSE" layoutX="650.0" layoutY="30.0" onMouseClicked="#closeApp" size="1.5em" />
-            <FontAwesomeIcon glyphName="ARROW_LEFT" layoutX="30.0" layoutY="30.0" onMouseClicked="#backToPrevious" size="1.5em" />
-            <JFXComboBox fx:id="cbState" layoutX="196.0" layoutY="564.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
+            <JFXPasswordField fx:id="tfPassword" layoutX="195.0" layoutY="266.0" prefHeight="25.0" prefWidth="296.0" />
+            <FontAwesomeIcon fill="#51b97e" glyphName="CLOSE" layoutX="650.0" layoutY="30.0" onMouseClicked="#closeApp" size="1.5em" />
+            <FontAwesomeIcon fill="#51b97e" glyphName="ARROW_LEFT" layoutX="30.0" layoutY="30.0" onMouseClicked="#backToPrevious" size="1.5em" />
+            <JFXComboBox fx:id="cbState" layoutX="196.0" layoutY="583.0" prefHeight="25.0" prefWidth="142.0" promptText="None" />
+            <Label fx:id="usernameWarning" layoutX="195.0" layoutY="242.0" text="Username must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordWarning" layoutX="195.0" layoutY="293.0" text="Password must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstNameWarning" layoutX="194.0" layoutY="347.0" text="First name must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="lastNameWarnig" layoutX="194.0" layoutY="400.0" text="Last name must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailWarning" layoutX="195.0" layoutY="451.0" text="Email must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="birthdateWarning" layoutX="196.0" layoutY="506.0" text="Birthdate must not be empty" textFill="RED">
+               <font>
+                  <Font name="Open Sans Regular" size="10.0" />
+               </font>
+            </Label>
+            <Text fill="RED" layoutX="256.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="253.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="256.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="256.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="232.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="253.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*">
+               <font>
+                  <Font name="Open Sans Regular" size="12.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </children>

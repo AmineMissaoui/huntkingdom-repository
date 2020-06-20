@@ -6,6 +6,7 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.net.URL?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -22,18 +23,19 @@
          </font></Text>
       <JFXTextArea fx:id="taPostDescription" layoutX="38.0" layoutY="114.0" prefHeight="88.0" prefWidth="562.0" promptText="   What's on your mind" />
       <JFXTextField fx:id="tfPostTitle" layoutX="36.0" layoutY="73.0" prefHeight="25.0" prefWidth="562.0" promptText="   Post title" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="392.0" layoutX="23.0" layoutY="283.0" stroke="#d0d0d0" strokeType="INSIDE" width="591.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="478.0" layoutX="23.0" layoutY="283.0" stroke="#d0d0d0" strokeType="INSIDE" width="591.0" />
       <Text fill="#51b97e" layoutX="38.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feed">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnShare" layoutX="488.0" layoutY="227.0" prefHeight="27.0" prefWidth="112.0" style="-fx-background-color: #1e90ff;" text="SHARE" textFill="WHITE">
+      <JFXButton fx:id="btnShare" layoutX="488.0" layoutY="227.0" prefHeight="27.0" prefWidth="112.0" style="-fx-background-color: #0594c1;" text="SHARE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
       <FontAwesomeIcon fill="#51b97e" glyphName="CAMERA" layoutX="52.0" layoutY="245.0" size="2em" />
       <FontAwesomeIcon fill="#51b97e" glyphName="FILE" layoutX="98.0" layoutY="244.0" size="2em" />
       <FontAwesomeIcon fill="#51b97e" glyphName="PAPERCLIP" layoutX="139.0" layoutY="244.0" size="2em" />
+      <Pane fx:id="feedPane" layoutX="39.0" layoutY="318.0" prefHeight="431.0" prefWidth="556.0" />
    </children>
 </AnchorPane>
