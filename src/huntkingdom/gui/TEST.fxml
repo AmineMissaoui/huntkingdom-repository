@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="100.0" prefWidth="100.0" styleClass="anchor" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TESTController">
+<AnchorPane id="AnchorPane" prefHeight="100.0" prefWidth="100.0" styleClass="anchor" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.TESTController">
     <stylesheets>
         <URL value="@TEST.css" />
     </stylesheets>

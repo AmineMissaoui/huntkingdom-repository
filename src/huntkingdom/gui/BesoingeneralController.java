@@ -141,7 +141,7 @@ public class BesoingeneralController implements Initializable {
          mes_annonces.setOnAction(e -> {
             try {
                 Stage stage = (Stage) mes_annonces.getScene().getWindow();
-                Parent myNewParent = FXMLLoader.load(getClass().getResource("huntkingdom/gui/FXMLArticle.fxml"));
+                Parent myNewParent = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/FXMLArticle.fxml"));
                 Scene myNewScene = new Scene(myNewParent);
                 stage.setScene(myNewScene);
                 stage.setTitle("mes_annonces");
@@ -149,12 +149,13 @@ public class BesoingeneralController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(huntkingdom.gui.AddFXMLController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
         });
         
             ajout.setOnAction(e -> {
             try {
                 Stage stage = (Stage) ajout.getScene().getWindow();
-                Parent myNewParent = FXMLLoader.load(getClass().getResource("huntkingdom/gui/AddFXML.fxml"));
+                Parent myNewParent = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/AddFXML.fxml"));
                 Scene myNewScene = new Scene(myNewParent);
                 stage.setScene(myNewScene);
                 stage.setTitle("ajout");

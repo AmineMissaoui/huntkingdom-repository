@@ -351,7 +351,7 @@ btnValider.setOnAction(new EventHandler<ActionEvent>() {
         Parent root;
        
               try {
-                  root=FXMLLoader.load(getClass().getClassLoader().getResource("gui/Besoingeneral.fxml"));
+                  root=FXMLLoader.load(getClass().getClassLoader().getResource("huntkingdom/gui/Besoingeneral.fxml"));
                   btn_retour.getScene().setRoot(root);
               } catch (IOException ex) {
                   Logger.getLogger(FXMLArticleController.class.getName()).log(Level.SEVERE, null, ex);

@@ -22,7 +22,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="barre1" prefHeight="716.0" prefWidth="837.0" styleClass="anchor" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddFXMLController">
+<AnchorPane id="AnchorPane" fx:id="barre1" prefHeight="716.0" prefWidth="837.0" styleClass="anchor" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.AddFXMLController">
     
       <stylesheets>
         <URL value="@AddFXML.css" />
