@@ -6,6 +6,7 @@
 package huntkingdom.services;
 
 import huntkingdom.entities.Group;
+import huntkingdom.utils.UserSession;
 import huntkingdom.utils.MyDB;
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,9 +30,11 @@ import static jdk.nashorn.tools.ShellFunctions.input;
  */
 public class GroupService {
         private Connection cnx;
+        private UserSession session ;
 
     public GroupService() {
         cnx=MyDB.getInstance().getConnection();
+        session=UserSession.getInstance();
     }
     
     
@@ -39,13 +42,14 @@ public class GroupService {
     public void addGroup(Group g) throws SQLException {
         
         
-               String request2 = "INSERT INTO `groupe` (`id`,`nom`,`description`)"
-                + "VALUES (NULL,?,?)";
+               String request2 = "INSERT INTO `groupe` (`group_id`,`nom`,`description`,`creator_id`)"
+                + "VALUES (NULL,?,?,?)";
 
          
                              PreparedStatement stm = cnx.prepareStatement(request2);
                     stm.setString(1, g.getNom());
                     stm.setString(2, g.getDescription());
+                    stm.setInt(3, session.getId());
 
             stm.executeUpdate();
         
@@ -54,14 +58,14 @@ public class GroupService {
 
     public ArrayList<Group> getGroups() throws SQLException{
         ArrayList<Group> results = new ArrayList<>();
-        String query = "SELECT * FROM `groupe`";
+        String query = "SELECT * FROM `groupe` where `creator_id`="+session.getId();
         Statement stm = cnx.createStatement();
         ResultSet rst= stm.executeQuery(query);
         int i=0;
         while (rst.next()){
 
             Group g = new Group();
-            g.setId(rst.getInt("id"));
+            g.setId(rst.getInt("group_id"));
             g.setNom(rst.getString("nom"));
             g.setDescription(rst.getString("description"));
             

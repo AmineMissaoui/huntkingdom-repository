@@ -95,7 +95,7 @@ public class HomeFXMLController implements Initializable {
    public void buttonGroup(ActionEvent event ){
        Pane groupScene = null;
         try {
-            groupScene = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/AddGroupFXML.fxml"));
+            groupScene = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/groupHome.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(HomeFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }

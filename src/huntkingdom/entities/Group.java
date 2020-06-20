@@ -12,7 +12,7 @@ import java.io.File;
  * @author Me
  */
 public class Group {
-    private int id;
+    private int id,creator_id;
     private String nom,description;
     private File imageFile;
     public Group(){}
@@ -102,6 +102,20 @@ public class Group {
      */
     public void setImageFile(File imageFile) {
         this.imageFile = imageFile;
+    }
+
+    /**
+     * @return the creator_id
+     */
+    public int getCreator_id() {
+        return creator_id;
+    }
+
+    /**
+     * @param creator_id the creator_id to set
+     */
+    public void setCreator_id(int creator_id) {
+        this.creator_id = creator_id;
     }
     
 }

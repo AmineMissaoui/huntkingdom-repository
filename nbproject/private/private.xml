@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/AmineMissaoui/Documents/GitHub/huntkingdom-repository/src/huntkingdom/NewFXMain.java</file>
-            <file>file:/C:/Users/AmineMissaoui/Documents/GitHub/huntkingdom-repository/src/huntkingdom/services/ServiceUser.java</file>
-            <file>file:/C:/Users/AmineMissaoui/Documents/GitHub/huntkingdom-repository/src/huntkingdom/entities/UserSession.java</file>
-            <file>file:/C:/Users/AmineMissaoui/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/AdminValidationFXMLController.java</file>
-            <file>file:/C:/Users/AmineMissaoui/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/LoginFXMLController.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/services/ServiceUser.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/GroupHomeController.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/NewFXMain.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/services/GroupService.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/ShowGroupsController.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/entities/Group.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/HomeFXMLController.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/utils/UserSession.java</file>
+            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/entities/User.java</file>
         </group>
     </open-files>
 </project-private>
