@@ -6,14 +6,22 @@
 package huntkingdom.services;
 
 import huntkingdom.entities.Group;
+import huntkingdom.utils.JavaFTP;
 import huntkingdom.utils.UserSession;
 import huntkingdom.utils.MyDB;
+import java.io.BufferedInputStream;
+
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPReply;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,27 +39,33 @@ import static jdk.nashorn.tools.ShellFunctions.input;
 public class GroupService {
         private Connection cnx;
         private UserSession session ;
+        private JavaFTP ftpClient;
 
     public GroupService() {
         cnx=MyDB.getInstance().getConnection();
         session=UserSession.getInstance();
+        ftpClient=JavaFTP.getInstance();
     }
     
     
     
     public void addGroup(Group g) throws SQLException {
         
-        
-               String request2 = "INSERT INTO `groupe` (`group_id`,`nom`,`description`,`creator_id`)"
-                + "VALUES (NULL,?,?,?)";
-
-         
-                             PreparedStatement stm = cnx.prepareStatement(request2);
-                    stm.setString(1, g.getNom());
-                    stm.setString(2, g.getDescription());
-                    stm.setInt(3, session.getId());
-
-            stm.executeUpdate();
+            try {
+                ftpClient.uploadFile(g.getImageFile().getAbsolutePath(), g.getImageFile().getName(), "/images/");
+                String request2 = "INSERT INTO `groupe` (`group_id`,`nom`,`description`,`creator_id`)"
+                        + "VALUES (NULL,?,?,?)";
+                
+                
+                PreparedStatement stm = cnx.prepareStatement(request2);
+                stm.setString(1, g.getNom());
+                stm.setString(2, g.getDescription());
+                stm.setInt(3, session.getId());
+                
+                stm.executeUpdate();
+            } catch (Exception ex) {
+                Logger.getLogger(GroupService.class.getName()).log(Level.SEVERE, null, ex);
+            }
         
         
         }

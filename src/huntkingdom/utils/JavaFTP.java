@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  * @author Me
  */
 public class JavaFTP {
-    String url = "ftp://127.0.0.1";
+    String url = "127.0.0.1";
     int port = 21;
 
     String login ="huntkingdom";
@@ -47,8 +47,29 @@ ex.printStackTrace();        }
         public static JavaFTP getInstance(){
         if(instanceClientFTP == null)
             instanceClientFTP = new JavaFTP();
+            System.out.println("ftp client connected");
+           
         return instanceClientFTP;
     }
  
-    
+      public void uploadFile(String localFileFullName, String fileName, String hostDir)
+			throws Exception {
+		try(InputStream input = new FileInputStream(new File(localFileFullName))){
+		ftpClient.storeFile(hostDir + fileName, input);
+		}
+                catch (IOException f) {
+			                 System.out.println("failed");	
+			}
+                
+	}
+      public void disconnect(){
+		if (this.ftpClient.isConnected()) {
+			try {
+				this.ftpClient.logout();
+				this.ftpClient.disconnect();
+			} catch (IOException f) {
+				
+			}
+		}
+	}
 }

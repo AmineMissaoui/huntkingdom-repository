@@ -71,10 +71,10 @@ public class AddGroupController implements Initializable {
             g.setNom(tfName.getText());
             g.setDescription(taDescription.getText());
                             GroupService gs = new GroupService();
-                          /*  if(selectedFile !=null){
+                            if(selectedFile !=null){
              File myImage=new File(selectedFile.getAbsolutePath());
-            // g.setImageFile(myImage);
-                            }*/
+            g.setImageFile(myImage);
+                            }
             try {
 
                 gs.addGroup(g);
