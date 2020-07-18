@@ -3,15 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/services/ServiceUser.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/GroupHomeController.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/NewFXMain.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/services/GroupService.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/ShowGroupsController.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/entities/Group.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/HomeFXMLController.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/utils/UserSession.java</file>
-            <file>file:/C:/Users/Me/Documents/GitHub/huntkingdom-repository/src/huntkingdom/entities/User.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/utils/Document_Creation.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/FXMLArticleController.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/HomeFXMLController.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/AccueilFXML.fxml</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/entities/User.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/AccueilFXMLController.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/AddFXML.fxml</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/utils/UserSession.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/services/ServiceArticle.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/FXMLArticle.fxml</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/TEST.fxml</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/TESTController.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/BesoingeneralController.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/AddFXMLController.java</file>
+            <file>file:/C:/Users/FOCUS/Documents/GitHub/huntkingdom-repository/src/huntkingdom/gui/LoginFXMLController.java</file>
         </group>
     </open-files>
 </project-private>
