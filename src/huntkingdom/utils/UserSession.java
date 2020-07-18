@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 public final class UserSession {
 
     private static UserSession instance;
-
     private String username;
     private String birthdate;
     private String userRole;
