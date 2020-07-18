@@ -288,27 +288,7 @@ btnValider.setOnAction(new EventHandler<ActionEvent>() {
         });
 
         
-        
-         btnAfficher.setOnAction(e -> {
-         //   try {
-                //Stage stage = (Stage) btnAfficher.getScene().getWindow();
-                
-                try {
-                    affichedetails(barre1, "FXMLArticle.fxml");
-                } catch (IOException ex) {
-                    Logger.getLogger(AddFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                //Parent myNewParent = FXMLLoader.load(getClass().getResource("/gui/FXMLArticle.fxml"));
-               // Scene myNewScene = new Scene(myNewParent);
-              //  stage.setScene(myNewScene);
-              //  stage.setTitle("Afficher");
-              //  stage.show();
-           // } catch (IOException ex) {
-              //  Logger.getLogger(AddFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-           // }
-        });
-        
+   
          
     }
     
