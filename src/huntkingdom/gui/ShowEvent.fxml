@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.ShowEventController">
+       <children>
+       <Button fx:id="btnadd" layoutX="25.0" layoutY="60.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="184.0" style="-fx-background-color: #218c74;" text="Add Path" textFill="#fff1f1">
+            
+      </Button>
+     <TableView fx:id="tableview" layoutX="24.0" layoutY="134.0" prefHeight="335.0" prefWidth="554.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="nomColumn" prefWidth="75.0" text="nom" />
+            <TableColumn fx:id="adresseColumn" prefWidth="75.0" text="adresse" />
+            <TableColumn fx:id="dateColumn" prefWidth="84.0" text="date" />
+            <TableColumn fx:id="heurerendezvousColumn" prefWidth="76.0" text="heurerendezvou" />
+            <TableColumn fx:id="adresserendezvousColumn" prefWidth="65.0" text="adresserendezvous" />
+            <TableColumn fx:id="jourdedepartColumn" prefWidth="75.0" text="jourdedepart" />
+            <TableColumn fx:id="jourderetourColumn" prefWidth="108.0" text="jourderetour" />
+         </columns>
+      </TableView>
+   </children>
+
+</AnchorPane>
