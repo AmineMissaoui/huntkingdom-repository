@@ -11,22 +11,39 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author amin
  */
 public class MyDB {
-    String url = "jdbc:mysql://127.0.0.1:3306/huntkingdom";
-    String login ="huntkingdom";
-    String password ="huntkingdom";
+    String url="jdbc:mysql://127.0.0.1:3306/1cinfo3";
+    String login="1cinfo3";
+    String password="1cinfo3";
     
-    Connection cnx;
+    Connection connection;
+    
+    static MyDB instance;
 
-    public MyDB() {
+    private MyDB() {
         try {
-            this.cnx = DriverManager.getConnection(url, login, password);
+            connection = DriverManager.getConnection(url,login,password);
+            System.out.println("Connexion établie");
         } catch (SQLException ex) {
-            System.out.println("error" + ex.getMessage());
-        }
+            System.out.println("ERREUR:"+ex.getMessage());
+        }   
     }
+    
+    public static MyDB getInstance(){
+        if(instance == null)
+            instance = new MyDB();
+        
+        return instance;
+    }
+    
+    public Connection getConnection(){
+        return connection;
+    }
+            
+    
 }
