@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="tfi" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.DisplayAnnonceAdminController">
+    <stylesheets>
+        <URL value="@displayannonceadmin.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="table" layoutX="497.0" layoutY="408.0" prefHeight="200.0" prefWidth="433.0">
+        <columns>
+          <TableColumn fx:id="titre" prefWidth="81.0" text="Titre" />
+          <TableColumn fx:id="info" prefWidth="126.0" text="Info" />
+            <TableColumn fx:id="date" prefWidth="69.0" text="Date" />
+            <TableColumn fx:id="adresse" prefWidth="81.0" text="Adresse" />
+            <TableColumn fx:id="image" prefWidth="75.0" text="Image" />
+        </columns>
+      </TableView>
+      <Label layoutX="199.0" layoutY="146.0" text="Titre" />
+      <Label layoutX="201.0" layoutY="237.0" text="Info" />
+      <Label layoutX="199.0" layoutY="349.0" text="Date" />
+      <Label layoutX="203.0" layoutY="432.0" text="Adresse" />
+      <JFXTextField fx:id="tft" layoutX="278.0" layoutY="142.0" />
+      <JFXTextField fx:id="tfii" layoutX="278.0" layoutY="194.0" prefHeight="85.0" prefWidth="135.0" />
+      <JFXTextField fx:id="tfa" layoutX="278.0" layoutY="415.0" />
+      <DatePicker fx:id="dp" layoutX="278.0" layoutY="345.0" prefHeight="25.0" prefWidth="135.0" />
+      <Button fx:id="edit" layoutX="720.0" layoutY="621.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #00a4d1;" text="Update" textFill="WHITE">
+         <effect>
+            <Reflection />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/FOCUS/Desktop/fesfes/article1/article1/src/images/icons8_update_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btn_delete" layoutX="820.0" layoutY="621.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #00a4d1;" text="Deleted" textFill="#fffdfd">
+         <effect>
+            <Reflection />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/FOCUS/Desktop/fesfes/article1/article1/src/images/icons8_delete_64px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="input_search" layoutX="781.0" layoutY="364.0" onKeyTyped="#Search" />
+      <Label layoutX="701.0" layoutY="364.0" prefHeight="25.0" prefWidth="72.0" text="Search">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_search_48px_2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Button fx:id="btn_image" layoutX="295.0" layoutY="508.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #00a4d1;" text="Image" textFill="WHITE">
+         <effect>
+            <Reflection />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/Users/FOCUS/Desktop/fesfes/article1/article1/src/images/icons8_add_image_48px_2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="c_image" fitHeight="150.0" fitWidth="200.0" layoutX="520.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="label_image" layoutX="162.0" layoutY="376.0" prefHeight="17.0" prefWidth="72.0" />
+   </children>
+</AnchorPane>
