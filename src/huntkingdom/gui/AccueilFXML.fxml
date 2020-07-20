@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1204.0" styleClass="anchor" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.AccueilFXMLController">
+    <stylesheets>
+        <URL value="@accueilfxml.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="ajout" layoutX="924.0" layoutY="81.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-background-color: #00a4d1;" text="New" textFill="WHITE">
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+      <Button fx:id="mes_annonces" layoutX="803.0" layoutY="81.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="111.0" style="-fx-background-color: #00a4d1;" text="Mes annonces" textFill="WHITE">
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+      <TableView fx:id="table" layoutX="47.0" layoutY="201.0" prefHeight="450.0" prefWidth="900.0">
+         <columns>
+            <TableColumn fx:id="prix" prefWidth="89.0" text="Prix" />
+            <TableColumn fx:id="titre" prefWidth="88.0" text="Titre" />
+            <TableColumn fx:id="cat" prefWidth="113.0" text="Categorie" />
+            <TableColumn fx:id="gouvv" prefWidth="112.0" text="Gouvernorat" />
+            <TableColumn fx:id="ville" prefWidth="100.0" text="Ville" />
+            <TableColumn fx:id="desc" prefWidth="190.0" text="Description" />
+            <TableColumn fx:id="tel" prefWidth="110.0" text="Numtel" />
+            <TableColumn fx:id="image_name" prefWidth="124.0" text="Image" />
+         </columns>
+      </TableView>
+      <TextField fx:id="input_search" layoutX="119.0" layoutY="157.0" onKeyTyped="#Search" />
+      <Label layoutX="61.0" layoutY="161.0" prefHeight="17.0" prefWidth="44.0" text="Search">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Button fx:id="btn_delete" layoutX="420.0" layoutY="680.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="253.0" text="Delete" />
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+
+</AnchorPane>
