@@ -57,6 +57,15 @@
                   </AnchorPane>
                </content>
             </Tab>
+            <Tab text="Annonces">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="tabannonce" prefHeight="732.0" prefWidth="837.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
          </tabs>
       </JFXTabPane>
    </children>

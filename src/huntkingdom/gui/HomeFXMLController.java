@@ -123,6 +123,14 @@ public class HomeFXMLController implements Initializable {
         stage.setScene(scene);
         stage.show();
 
+    private void buttonannonce(ActionEvent event) {
+         Pane groupScene = null;
+        try {
+            groupScene = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/Besoingeneral.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(HomeFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                panelHome.setCenter(groupScene);
     }
 
 }
