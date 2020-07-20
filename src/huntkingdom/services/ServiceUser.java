@@ -154,7 +154,7 @@ public class ServiceUser implements IServiceUser{
             u.setUsername(rst.getString(4));
             u.setPassword(rst.getString(5));
             u.setEmail(rst.getString(6));
-            u.setBirthdate(rst.getString(7));
+            u.setBirthdate(rst.getTimestamp(7));
             u.setAdress(rst.getString(8));
             u.setState(rst.getString(9));
             u.setCity(rst.getString(10));
