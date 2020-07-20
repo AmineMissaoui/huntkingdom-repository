@@ -19,6 +19,8 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -130,7 +132,8 @@ public class RegisterFXMLController implements Initializable {
             if(dpBirthdate.getValue().toString().equals("")){
                 birthdateWarning.setVisible(true);
             }else{
-                u.setBirthdate(dpBirthdate.getValue().toString());
+                LocalDate bd = dpBirthdate.getValue();
+                u.setBirthdate(Timestamp.valueOf(bd.atStartOfDay()));
             }
             u.setAdress(tfAdress.getText());
             u.setState(cbState.getValue());

@@ -8,6 +8,7 @@ package huntkingdom.utils;
 import huntkingdom.entities.User;
 import huntkingdom.services.ServiceUser;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +20,7 @@ public final class UserSession {
 
     private static UserSession instance;
     private String username;
-    private String birthdate;
+    private Timestamp birthdate;
     private String userRole;
 
     private int id;
@@ -54,7 +55,7 @@ public final class UserSession {
         return this.username;
     }
     
-    public String getBirthdate() {
+    public Timestamp getBirthdate() {
         return this.birthdate;
     }
     
