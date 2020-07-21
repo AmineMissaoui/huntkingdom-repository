@@ -120,5 +120,10 @@ public class HomeFXMLController implements Initializable {
         }
                 panelHome.setCenter(groupScene);
     }
+    @FXML
+    private void buttonEvent(ActionEvent event) throws IOException {
+        Pane homeScene = FXMLLoader.load(getClass().getResource("/huntkingdom/gui/EventHome.fxml"));
+        panelHome.setCenter(homeScene);
+    }
 
 }

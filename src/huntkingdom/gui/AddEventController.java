@@ -19,7 +19,9 @@ import java.io.IOException;
         
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -91,24 +93,23 @@ public class AddEventController  implements Initializable {
                 stage.close();
                 
             } catch (IOException ex) {
-                System.out.println("error");
-                //Logger.getLogger(NoterViewController.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
             }
         });
         
         btn_valider.setOnAction((ActionEvent event) -> {
             
-            Event evenement = new Event();
-            evenement.setCreateur(session.getId());//connected user ? 
-            evenement.setTitre(String.valueOf(TextTitre.getText()));
-            evenement.setDescription(String.valueOf(TextDescription.getText()));
-            evenement.setnbPlace(Integer.valueOf(nb_place.getText()));
+            Event evenement = new Event();System.out.println("hey");
+            //evenement.setCreateur(session.getId()); //connected user ? 
+            evenement.setEvent_title(String.valueOf(TextTitre.getText()));
+            evenement.setEvent_description(String.valueOf(TextDescription.getText()));
+            evenement.setEvent_max_number(Integer.valueOf(nb_place.getText()));
             //date_depart mnin jebneha
             java.util.Date date_depart = java.sql.Date.valueOf(DatePickerDepart.getValue());
-            evenement.setJour_de_depart((java.sql.Timestamp) date_depart);
+            evenement.setEvent_start_date(/*(java.sql.Timestamp)*/ date_depart);
             
             java.util.Date date_arrive = java.sql.Date.valueOf(DatePickerArrivee.getValue());
-            evenement.setJour_de_retour((java.sql.Timestamp) date_arrive);
+            evenement.setEvent_end_date(/*(java.sql.Timestamp) */date_arrive);
             
             ServiceEvent es = new ServiceEvent();
             try {
@@ -118,7 +119,10 @@ public class AddEventController  implements Initializable {
             }
             System.out.println("event added");
             
-            try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowEvent.fxml"));
+
+           
+    /*        try {
                 Parent pagePieChart = FXMLLoader.load(getClass().getResource("/gestionrandonnee/views/AjoutRandonneeView.fxml"));
                 Scene scene = new Scene(pagePieChart);
                 Stage stage = (Stage) ((Node) event.getSource())
@@ -126,7 +130,7 @@ public class AddEventController  implements Initializable {
                         .getWindow();
                 stage.setScene(scene);
                 stage.close();
-
+*/
                 // creer notification
                 /*Notifications notificationBuilder = Notifications.create()
                         .title("Evennement ajouté avec success")
@@ -138,10 +142,10 @@ public class AddEventController  implements Initializable {
                 notificationBuilder.showConfirm();*/
 
                 //fin creation notification
-            } catch (IOException ex) {
+          /*  } catch (IOException ex) {
                 System.out.println("error");
                 //Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            }*/
         });
         
     }

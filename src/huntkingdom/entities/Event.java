@@ -6,6 +6,7 @@
 package huntkingdom.entities;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  *
@@ -26,28 +27,29 @@ public class Event {
     }
     
     private int id;
-    private String nom;
-    private String adresse;
-    private String date;
-    private String heure_rendezvous;
-    private String adresse_rendezvous ;
-    private Timestamp jour_de_depart ;
-    private Timestamp jour_de_retour ;
+    private String event_title;
+    private String event_description;
+    
+    private int event_max_number;
+    private String event_meeting_place;
+    private String event_destination;
+    private Date event_start_date ;
+    private Date event_end_date ;
     private int createur;
 
-    public Event(int id, String nom, String adresse, String date, String heure_rendezvous, String adresse_rendezvous, Timestamp jour_de_depart, Timestamp jour_de_retour, int createur) {
-        this.id = id;
-        this.nom = nom;
-        this.adresse = adresse;
-        this.date = date;
-        this.heure_rendezvous = heure_rendezvous;
-        this.adresse_rendezvous = adresse_rendezvous;
-        this.jour_de_depart = jour_de_depart;
-        this.jour_de_retour = jour_de_retour;
-        this.createur = createur;
+    public Event() {
     }
 
-    public Event() {
+    public Event(int id, String event_title, String event_description, int event_max_number, String event_meeting_place, String event_destination, Date event_start_date, Date event_end_date, int createur) {
+        this.id = id;
+        this.event_title = event_title;
+        this.event_description = event_description;
+        this.event_max_number = event_max_number;
+        this.event_meeting_place = event_meeting_place;
+        this.event_destination = event_destination;
+        this.event_start_date = event_start_date;
+        this.event_end_date = event_end_date;
+        this.createur = createur;
     }
 
     public int getId() {
@@ -58,60 +60,60 @@ public class Event {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getEvent_title() {
+        return event_title;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setEvent_title(String event_title) {
+        this.event_title = event_title;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getEvent_description() {
+        return event_description;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setEvent_description(String event_description) {
+        this.event_description = event_description;
     }
 
-    public String getDate() {
-        return date;
+    public int getEvent_max_number() {
+        return event_max_number;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setEvent_max_number(int event_max_number) {
+        this.event_max_number = event_max_number;
     }
 
-    public String getHeure_rendezvous() {
-        return heure_rendezvous;
+    public String getEvent_meeting_place() {
+        return event_meeting_place;
     }
 
-    public void setHeure_rendezvous(String heure_rendezvous) {
-        this.heure_rendezvous = heure_rendezvous;
+    public void setEvent_meeting_place(String event_meeting_place) {
+        this.event_meeting_place = event_meeting_place;
     }
 
-    public String getAdresse_rendezvous() {
-        return adresse_rendezvous;
+    public String getEvent_destination() {
+        return event_destination;
     }
 
-    public void setAdresse_rendezvous(String adresse_rendezvous) {
-        this.adresse_rendezvous = adresse_rendezvous;
+    public void setEvent_destination(String event_destination) {
+        this.event_destination = event_destination;
     }
 
-    public Timestamp getJour_de_depart() {
-        return jour_de_depart;
+    public Date getEvent_start_date() {
+        return event_start_date;
     }
 
-    public void setJour_de_depart(Timestamp jour_de_depart) {
-        this.jour_de_depart = jour_de_depart;
+    public void setEvent_start_date(Date event_start_date) {
+        this.event_start_date = event_start_date;
     }
 
-    public Timestamp getJour_de_retour() {
-        return jour_de_retour;
+    public Date getEvent_end_date() {
+        return event_end_date;
     }
 
-    public void setJour_de_retour(Timestamp jour_de_retour) {
-        this.jour_de_retour = jour_de_retour;
+    public void setEvent_end_date(Date event_end_date) {
+        this.event_end_date = event_end_date;
     }
 
     public int getCreateur() {
@@ -122,10 +124,11 @@ public class Event {
         this.createur = createur;
     }
 
+
     
     @Override
     public String toString() {
-        return "Event{" + "id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", date=" + date + ", heure_rendezvous=" + heure_rendezvous + ", adresse_rendezvous=" + adresse_rendezvous + ", jour_de_depart=" + jour_de_depart + ", jour_de_retour=" + jour_de_retour + ", createur=" + createur + '}';
+        return "Event{" + "id=" + id + ", event_title=" + event_title + ", event_destination=" + event_destination + ", event_meeting_place=" + event_meeting_place + ", event_max_number=" + event_max_number +  '}';
     }
 
     

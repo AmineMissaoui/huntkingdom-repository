@@ -26,14 +26,14 @@ public class ServiceEvent {
     }
     
      public void addevents(Event v) throws SQLException {
-        String request = v.getJour_de_retour()
-                + "INSERT INTO `events` (`id`,`nom`,`adresse `)"
-                + "VALUES (NULL, '" + v.getNom()+  "', '"
-                + v.getAdresse_rendezvous()+"', '"
-                + v.getHeure_rendezvous()+"', '"
-                + v.getJour_de_depart()+"', '"
-                + v.getJour_de_retour()+"', '"               
-                +v.getAdresse()+ "')";
+        String request =  "INSERT INTO events (event_id,event_title,event_description,event_start_date,event_end_date,event_meeting_place,event_destination,event_max_number )"
+                + "VALUES (NULL, '" + v.getEvent_title()+  "', '"
+                + v.getEvent_description()+"', '"
+                + v.getEvent_start_date()+"', '"
+                + v.getEvent_end_date()+"', '"
+                + v.getEvent_meeting_place()+"', '"               
+                +v.getEvent_destination()+"', '"  
+                +v.getEvent_max_number()+"')";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
@@ -44,14 +44,21 @@ public class ServiceEvent {
      public ArrayList<Event> GetEvents() throws SQLException{
         ArrayList<Event> results = new ArrayList<>();
         
-        String query = "SELECT * FROM `event`";
+        String query = "SELECT * FROM `events`";
         Statement stm = cnx.createStatement();
         ResultSet rst= stm.executeQuery(query);
         while (rst.next()){
             Event v = new Event();
-            v.setId(rst.getInt("id"));
-            v.setNom(rst.getString(2));
-            v.setAdresse(rst.getString(3));
+            v.setId(rst.getInt(1));
+            v.setEvent_title(rst.getString(2));
+            v.setEvent_description(rst.getString(3));
+            v.setEvent_start_date(rst.getTimestamp(4));
+            v.setEvent_end_date(rst.getTimestamp(5));
+            v.setEvent_meeting_place(rst.getString(6));
+            
+            v.setEvent_destination(rst.getString(7));
+            v.setEvent_max_number(rst.getInt(8));
+            
             results.add(v);
               
      }
@@ -63,15 +70,15 @@ public class ServiceEvent {
                 + "WHERE id=?";
         PreparedStatement pst = cnx.prepareStatement(request);
         
-        pst.setString(1, v.getNom());
-        pst.setString(2, v.getAdresse());
+        pst.setString(1, v.getEvent_title());
+        pst.setString(2, v.getEvent_description());
         pst.setInt(3, v.getId());
         System.out.println(pst);
         
         pst.executeUpdate();
     }
      public void deleteEvents(Event v) throws SQLException {
-        String request ="DELETE FROM `Events` WHERE id="+v.getId();
+        String request ="DELETE FROM `Events` WHERE event_id="+v.getId();
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }

@@ -16,7 +16,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -31,27 +34,29 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class ShowEventController implements Initializable {
 
     @FXML
-    private Button btnadd;
-    @FXML
     private TableView<Event> tableview;
     @FXML
     private TableColumn<Event, String> idColumn;
     @FXML
     private TableColumn<Event, String> nomColumn;
-    @FXML
-    private TableColumn<Event, String> adresseColumn;
-    @FXML
-    private TableColumn<Event, Date> dateColumn;
-    @FXML
-    private TableColumn<Event, Date> heurerendezvousColumn;
-    @FXML
-    private TableColumn<Event, String> adresserendezvousColumn;
-    @FXML
-    private TableColumn<Event, Date> jourdedepartColumn;
-    @FXML
-    private TableColumn<Event, Date> jourderetourColumn;
 
     ServiceEvent es = new ServiceEvent();
+    @FXML
+    private TableColumn<?, ?> descriptionColumn;
+    @FXML
+    private TableColumn<?, ?> datestartColumn;
+    @FXML
+    private TableColumn<?, ?> datefinColumn;
+    @FXML
+    private TableColumn<?, ?> event_meeting_placeColumn;
+    @FXML
+    private TableColumn<?, ?> event_destinationColumn;
+    @FXML
+    private TableColumn<?, ?> event_max_numberColumn;
+    @FXML
+    private Button btndel;
+    @FXML
+    private Button btnmap;
     /**
      * Initializes the controller class.
      */
@@ -59,14 +64,13 @@ public class ShowEventController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
             idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-            nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
-            adresseColumn.setCellValueFactory(new PropertyValueFactory<>("adresse"));
-            dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-            heurerendezvousColumn.setCellValueFactory(new PropertyValueFactory<>("heurerendezvous"));
-            adresserendezvousColumn.setCellValueFactory(new PropertyValueFactory<>("adresserendezvous"));
-            jourdedepartColumn.setCellValueFactory(new PropertyValueFactory<>("cjourdedepart"));
-            jourderetourColumn.setCellValueFactory(new PropertyValueFactory<>("jourderetour"));
-
+            nomColumn.setCellValueFactory(new PropertyValueFactory<>("event_title"));
+            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("event_description"));
+            datestartColumn.setCellValueFactory(new PropertyValueFactory<>("event_start_date"));
+            datefinColumn.setCellValueFactory(new PropertyValueFactory<>("event_end_date"));
+            event_meeting_placeColumn.setCellValueFactory(new PropertyValueFactory<>("event_destination"));
+            event_destinationColumn.setCellValueFactory(new PropertyValueFactory<>("event_destination"));
+            event_max_numberColumn.setCellValueFactory(new PropertyValueFactory<>("event_max_number"));
         try {
             ArrayList<Event> eventlist = es.GetEvents();
             ObservableList<Event> L = FXCollections.observableArrayList();
@@ -75,6 +79,28 @@ public class ShowEventController implements Initializable {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-    }    
+        btndel.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    try {
+                        deleteevent();
+                    } catch (SQLException ex) {
+                        System.out.println(ex.getMessage());
+                    }
+                }
+            });
+        btnmap.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MAP.fxml"));        
+                }
+            });
+    }
+
+public void deleteevent() throws SQLException{
+    Event v = tableview.getSelectionModel().getSelectedItem();
+    es.deleteEvents(v);
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("EventHome.fxml"));
+}    
     
 }

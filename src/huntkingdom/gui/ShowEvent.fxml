@@ -9,19 +9,21 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.ShowEventController">
        <children>
-       <Button fx:id="btnadd" layoutX="25.0" layoutY="60.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="184.0" style="-fx-background-color: #218c74;" text="Add Path" textFill="#fff1f1">
-            
+       <Button fx:id="btndel" layoutX="25.0" layoutY="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" style="-fx-background-color: #218c74;" text="Delete event" textFill="#fff1f1">
+     </Button>
+           <Button fx:id="btnmap" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" style="-fx-background-color: #218c74;" text="Map" textFill="#fff1f1">
+
       </Button>
-     <TableView fx:id="tableview" layoutX="24.0" layoutY="134.0" prefHeight="335.0" prefWidth="554.0">
+     <TableView fx:id="tableview" layoutX="24.0" layoutY="134.0" prefHeight="335.0" prefWidth="630.0">
          <columns>
             <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="nomColumn" prefWidth="75.0" text="nom" />
-            <TableColumn fx:id="adresseColumn" prefWidth="75.0" text="adresse" />
-            <TableColumn fx:id="dateColumn" prefWidth="84.0" text="date" />
-            <TableColumn fx:id="heurerendezvousColumn" prefWidth="76.0" text="heurerendezvou" />
-            <TableColumn fx:id="adresserendezvousColumn" prefWidth="65.0" text="adresserendezvous" />
-            <TableColumn fx:id="jourdedepartColumn" prefWidth="75.0" text="jourdedepart" />
-            <TableColumn fx:id="jourderetourColumn" prefWidth="108.0" text="jourderetour" />
+            <TableColumn fx:id="nomColumn" prefWidth="75.0" text="event_title" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="datestartColumn" prefWidth="84.0" text="event_start_date" />
+            <TableColumn fx:id="datefinColumn" prefWidth="76.0" text="event_end_date" />
+            <TableColumn fx:id="event_meeting_placeColumn" prefWidth="65.0" text="event_meeting_place" />
+            <TableColumn fx:id="event_destinationColumn" prefWidth="75.0" text="event_destination" />
+            <TableColumn fx:id="event_max_numberColumn" prefWidth="108.0" text="event_max_number" />
          </columns>
       </TableView>
    </children>

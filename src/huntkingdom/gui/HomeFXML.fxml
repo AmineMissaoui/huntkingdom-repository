@@ -62,7 +62,7 @@
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></JFXButton>
-                  <JFXButton fx:id="btnEvent" alignment="BASELINE_LEFT" layoutX="34.0" layoutY="110.0" prefHeight="55.0" prefWidth="165.0" text="EVENT" textFill="WHITE">
+                  <JFXButton fx:id="btnEvent" alignment="BASELINE_LEFT" layoutX="34.0"  layoutY="110.0" onAction="#buttonEvent" prefHeight="55.0" prefWidth="165.0" text="EVENT" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></JFXButton>

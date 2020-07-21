@@ -14,7 +14,7 @@
       <VBox alignment="CENTER" fillWidth="false" layoutX="168.0" layoutY="14.0" minHeight="-Infinity" prefHeight="368.0" prefWidth="516.0" spacing="15.0">
          <children>
             <JFXTextField fx:id="TextTitre" focusColor="#0099b6" prefHeight="25.0" prefWidth="289.0" promptText="Title" unFocusColor="#0099b6" VBox.vgrow="ALWAYS" />
-            <JFXTextArea fx:id="TextDescription" focusColor="#0099b6" nodeOrientation="LEFT_TO_RIGHT" prefHeight="69.0" prefWidth="291.0" promptText="Description" stylesheets="@../../../../../Downloads/GestionRandonneeFinal/src/gestionrandonnee/views/themeRANDO.css" unFocusColor="#0099b6">
+            <JFXTextArea fx:id="TextDescription" focusColor="#0099b6" nodeOrientation="LEFT_TO_RIGHT" prefHeight="69.0" prefWidth="291.0" promptText="Description" stylesheets="" unFocusColor="#0099b6">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
