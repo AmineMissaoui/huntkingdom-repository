@@ -8,6 +8,7 @@ package huntkingdom.services;
 import huntkingdom.entities.JoinGroup;
 import huntkingdom.entities.Message;
 import huntkingdom.utils.MyDB;
+import huntkingdom.utils.UserSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,17 +20,20 @@ import java.util.ArrayList;
  * @author Me
  */
 public class JoinGroupService {
-    
+            private UserSession session ;
+
            private Connection cnx;
 
     public JoinGroupService() {
         cnx=MyDB.getInstance().getConnection();
+                session=UserSession.getInstance();
+
     }
     
     
     
     public void addJoinGroup(JoinGroup j) throws SQLException {
-        String request = "INSERT INTO `joinGroup` (`date`,`userId`,'groupId') VALUES ('"+j.getDate()+"', '" +j.getUserId()+"','"+j.getGroupId()+"')";
+        String request = "INSERT INTO `join_group` (`users_id`,`group_id`) VALUES ('" +session.getId()+"','"+j.getGroupId()+"')";
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }

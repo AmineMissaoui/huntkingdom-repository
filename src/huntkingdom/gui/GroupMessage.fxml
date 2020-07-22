@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.GroupMessageController">
+   <children>
+      <JFXTextArea fx:id="tfMessage" layoutX="58.0" layoutY="330.0" prefHeight="58.0" prefWidth="390.0" />
+      <JFXButton layoutX="463.0" layoutY="359.0" onAction="#onSendMessage" text="Send  &gt;" />
+      <ScrollPane fx:id="spDisplayMessage" layoutX="59.0" layoutY="7.0" prefHeight="291.0" prefWidth="390.0" />
+   </children>
+</AnchorPane>

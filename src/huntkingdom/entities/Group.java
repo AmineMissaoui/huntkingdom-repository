@@ -14,9 +14,9 @@ import java.io.File;
 public class Group {
     private int id,creator_id;
     private String nom,description;
-    private File imageFile;
+    private String imageFile;
     public Group(){}
-    public Group (int id, String nom,String description, File imageFile){
+    public Group (int id, String nom,String description, String imageFile){
     this.id=id;
     this.description=description;
     this.nom=nom;
@@ -30,7 +30,7 @@ public class Group {
     
     }
 
-        public Group ( String nom,String description, File imageFile){
+        public Group ( String nom,String description, String imageFile){
     this.description=description;
     this.nom=nom;
         this.imageFile=imageFile;
@@ -93,14 +93,14 @@ public class Group {
     /**
      * @return the imageFile
      */
-    public File getImageFile() {
+    public String getImageFile() {
         return imageFile;
     }
 
     /**
      * @param imageFile the imageFile to set
      */
-    public void setImageFile(File imageFile) {
+    public void setImageFile(String imageFile) {
         this.imageFile = imageFile;
     }
 

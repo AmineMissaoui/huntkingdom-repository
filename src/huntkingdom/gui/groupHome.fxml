@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="paneHomeGroupe" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="huntkingdom.gui.GroupHomeController">
    <center>
-      <AnchorPane prefHeight="800.0" prefWidth="500.0" style="-fx-border-color: #179C10;" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton fx:id="btnAddGroup" layoutX="320.0" layoutY="14.0" onAction="#OnAddGroup" text="Add Group" />
-         </children>
-      </AnchorPane>
+      <AnchorPane prefHeight="800.0" prefWidth="500.0" style="-fx-border-color: #179C10;" BorderPane.alignment="CENTER" />
    </center>
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </right>
+   <top>
+      <AnchorPane prefHeight="109.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField fx:id="tfSearch" layoutX="298.0" layoutY="74.0" />
+            <Label layoutX="190.0" layoutY="80.0" text="Find groups">
+               <font>
+                  <Font name="Arial Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="443.0" layoutY="74.0" onAction="#onSearchGroups" prefHeight="25.0" prefWidth="60.0" text="Search" />
+            <JFXButton fx:id="btnAddGroup" layoutX="14.0" layoutY="74.0" onAction="#OnAddGroup" text="Add Group" />
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>
