@@ -6,6 +6,7 @@
 package huntkingdom.gui;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import huntkingdom.HuntKingdom;
 import java.io.IOException;
 import java.net.URL;
@@ -33,18 +34,32 @@ public class GroupHomeController implements Initializable {
     private JFXButton btnAddGroup;
     @FXML
     private BorderPane paneHomeGroupe;
+    @FXML
+    private JFXTextField tfSearch;
+    
+    public static String searchKey="";
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
          //Scene myscene= btnGroups.getScene();
         
         
     paneHomeGroupe.setRight(getPage("showGroups"));
         // TODO
-    }    
-
+    }   
+    
+    @FXML
+    private void onSearchGroups(ActionEvent event) {
+        if(tfSearch.getText()!=null)
+        searchKey=tfSearch.getText();
+       
+        paneHomeGroupe.setCenter(getPage("GroupSearch"));
+    
+    }
+    
     @FXML
     private void OnAddGroup(ActionEvent event) {
         try {
@@ -58,7 +73,7 @@ public class GroupHomeController implements Initializable {
             Logger.getLogger(GroupHomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    private Pane getPage(String fileName){
+    public Pane getPage(String fileName){
         Pane view=null;
     URL fileURL =HuntKingdom.class.getResource("/huntkingdom/gui/"+fileName+".fxml");
         try {
@@ -70,5 +85,9 @@ public class GroupHomeController implements Initializable {
         }
         return view;
 }
+   
+
+    
+   
 
 }

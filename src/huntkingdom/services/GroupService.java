@@ -52,16 +52,16 @@ public class GroupService {
     public void addGroup(Group g) throws SQLException {
         
             try {
-                ftpClient.uploadFile(g.getImageFile().getAbsolutePath(), g.getImageFile().getName(), "/images/");
-                String request2 = "INSERT INTO `groupe` (`group_id`,`nom`,`description`,`creator_id`)"
-                        + "VALUES (NULL,?,?,?)";
+                ftpClient.uploadFile(g.getImageFile(), g.getId()+"", "/images/");
+                String request2 = "INSERT INTO `groupe` (`group_id`,`nom`,`description`,`creator_id`,`image`)"
+                        + "VALUES (NULL,?,?,?,?)";
                 
                 
                 PreparedStatement stm = cnx.prepareStatement(request2);
                 stm.setString(1, g.getNom());
                 stm.setString(2, g.getDescription());
                 stm.setInt(3, session.getId());
-                
+                stm.setString(4, "http://localhost:80/huntkingdom/images/"+g.getId()+"");
                 stm.executeUpdate();
             } catch (Exception ex) {
                 Logger.getLogger(GroupService.class.getName()).log(Level.SEVERE, null, ex);
@@ -82,6 +82,25 @@ public class GroupService {
             g.setId(rst.getInt("group_id"));
             g.setNom(rst.getString("nom"));
             g.setDescription(rst.getString("description"));
+            g.setImageFile(rst.getString("image"));
+            
+            results.add(g);
+            
+        }
+        return results; 
+    }
+    public ArrayList<Group> getGroup(String GroupName) throws SQLException{
+        ArrayList<Group> results = new ArrayList<>();
+        String query = "SELECT * FROM `groupe` where `nom`='"+GroupName+"'";
+        Statement stm = cnx.createStatement();
+        ResultSet rst= stm.executeQuery(query);
+        int i=0;
+        while (rst.next()){
+
+            Group g = new Group();
+            g.setId(rst.getInt("group_id"));
+            g.setNom(rst.getString("nom"));
+            g.setDescription(rst.getString("description"));
             
             
             results.add(g);
@@ -89,7 +108,6 @@ public class GroupService {
         }
         return results; 
     }
-    
     public void updateGroup(Group g) throws SQLException{
         String request= "UPDATE `groupe` SET `nom`='"+g.getNom()+"', `description`='"+g.getDescription()+"' WHERE id="+g.getId();
         Statement pst = cnx.createStatement();
